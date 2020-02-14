@@ -3,6 +3,7 @@
     "module": "index.js",
     "type": "module",
     "scripts": {
+        "build":"tsc",
         "prettier": "prettier *.js --write *.json *.md",
         "start": "node --experimental-modules --experimental-json-modules ./cli.js "
     },
