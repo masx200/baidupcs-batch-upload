@@ -6,6 +6,8 @@ https://github.com/iikira/BaiduPCS-Go
 
 给上传操作限流,防止打开过多报错,默认最多同时运行 15 个上传进程
 
+如果遇到网络问题上传失败,则自动重试
+
 # 使用方法
 
 安装 `node_modules`
