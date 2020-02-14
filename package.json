@@ -1,4 +1,6 @@
 {
+    "types": "index.d.ts",
+    "module": "index.js",
     "type": "module",
     "scripts": {
         "prettier": "prettier *.js --write *.json *.md",
@@ -16,7 +18,7 @@
         "typescript": "^3.7.5"
     },
     "name": "@masx200/baidupcs-batch-upload",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "index.js",
     "license": "MIT",
     "devDependencies": {},
