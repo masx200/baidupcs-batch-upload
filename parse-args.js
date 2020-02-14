@@ -24,4 +24,20 @@ function parseargs(args) {
     return 参数obj;
 }
 export { parseargs };
-//# sourceMappingURL=parse-args.js.map
+// //# sourceMappingURL=parse-args.js.map
+// /**
+//  * @template T
+//  * @param {T}x
+//  * @returns {Array<T>}
+//  */
+// export function aaa(x){return [x]}
+
+// /**
+//  * @typedef{<T>(a:string,y:T)=>{0:T,1: a}}bbb
+//  */
+
+//  /**
+//   * 
+//   * @type{bbb}
+//   */
+// export function ccc(x,y){return [y,x]}
