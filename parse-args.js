@@ -3,6 +3,9 @@
  * @returns {Record<string,string>}
  */
 function parseargs(args) {
+    /**
+     * @type{Record<string,string>}
+     */
     const 参数obj = {};
     args.filter(s => s.startsWith("--"))
         .map(s => /--(?<key>.+)=(?<value>.+)/g.exec(s))
