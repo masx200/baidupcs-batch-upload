@@ -1,0 +1,29 @@
+{
+    "type": "module",
+    "scripts": {
+        "prettier": "prettier *.js --write *.json",
+        "start": "node --experimental-modules --experimental-json-modules ./cli.js "
+    },
+    "dependencies": {
+        "@masx200/async-task-current-limiter": "^1.0.2",
+        "@types/find": "^0.2.1",
+        "@types/fs-extra": "^8.0.1",
+        "@types/node": "^13.7.1",
+        "find": "^0.3.0",
+        "fs-extra": "^8.1.0",
+        "prettier": "^1.19.1"
+    },
+    "name": "@masx200/baidupcs-batch-upload",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {},
+    "keywords": [],
+    "author": "masx200 <34191203+masx200@users.noreply.github.com>",
+    "description": "使用baidupcs-go,百度网盘批量上传图片",
+    "repository": "git+https://github.com/masx200/baidupcs-batch-upload.git",
+    "bugs": {
+        "url": "https://github.com/masx200/baidupcs-batch-upload/issues"
+    },
+    "homepage": "https://github.com/masx200/baidupcs-batch-upload#readme"
+}
