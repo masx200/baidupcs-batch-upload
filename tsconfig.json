@@ -1,0 +1,27 @@
+{
+    "include": ["*.js", "*.ts"],
+    "compilerOptions": {
+        "pretty": true,
+        "removeComments": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": false,
+        "declaration": true,
+        "allowJs": true,
+        "checkJs": true,
+        "charset": "utf-8",
+        "strict": true,
+        "target": "ESNEXT",
+        "module": "ESNEXT",
+        "importHelpers": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true
+    }
+}
