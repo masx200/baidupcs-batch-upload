@@ -2,10 +2,17 @@
 # yarn lockfile v1
 
 
-"@masx200/async-task-current-limiter@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@masx200/async-task-current-limiter/-/async-task-current-limiter-1.0.2.tgz#b6b71091bd696150f57663f243d208c23550fea2"
-  integrity sha512-dVKli2humT669NcB5GJdF17ZJC/EtxW+6wlry/9eOCkbCHvN57JJivWDMtfMukyj/AAJxD6YVCj2HuOixMhRug==
+"@masx200/async-task-current-limiter@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@masx200/async-task-current-limiter/-/async-task-current-limiter-1.0.4.tgz#0a65f26cb0c92b9b2ed4699d29ec7eff9bbd4847"
+  integrity sha512-nnZd/b3M6Euvy9Xr062OkYC5/l0bXf/HGVsVnaHQMwZq3L0acddOhg65ObG2sxwuJd+do2WWtjMmqQY3jCOwyg==
+  dependencies:
+    "@masx200/event-emitter-target" "^1.1.5"
+
+"@masx200/event-emitter-target@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.npmjs.org/@masx200/event-emitter-target/-/event-emitter-target-1.1.5.tgz#d176c743eb67dca7d65984293c19a56284d55e03"
+  integrity sha512-+SIaAsoFZ0UioQRrQ0Yf7prpfchsx4G4KunDFsSJSo3haVBk2IXOI4PdE+Mg6hiSelSHoxgIf5MUbjlglMpnxQ==
 
 "@types/find@^0.2.1":
   version "0.2.1"
