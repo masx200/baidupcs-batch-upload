@@ -37,5 +37,7 @@ export async function upload(file, destination) {
         } else {
             throw new Error("baidupcs-go:" + stdout);
         }
+    }else{
+        console.log('文件上传成功',file)
     }
 }
