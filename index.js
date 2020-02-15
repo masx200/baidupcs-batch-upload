@@ -13,6 +13,7 @@ process.on("unhandledRejection", e => {
 });
 let 总数 = 0;
 let 完成数 = 0;
+
 /**
  * 
  * 
@@ -26,17 +27,21 @@ const start = async (inputdir, destdir) => {
     总数 = filedatas.length;
     console.log("找到文件" + filedatas.length + "个");
     console.log(JSON.stringify(filedatas, null, 4));
+    const 输入目录名 = path.basename(inputdir);
+
     filedatas.forEach(
         /**
          * @param {string} file
          */
         async file => {
+            // 给上传目标文件夹添加了输入文件夹的名字
+            /*
+             */
             const destination = posix.dirname(
                 posix
-                    .resolve(destdir, path.relative(inputdir, file))
+                    .resolve(destdir, 输入目录名, path.relative(inputdir, file))
                     .replace(/\\/g, "/")
             );
-
             await upload(file, destination);
             完成数++;
             console.log("完成进度:", `${完成数} / ${总数}`);
