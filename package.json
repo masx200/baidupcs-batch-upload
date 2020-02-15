@@ -19,7 +19,7 @@
         "typescript": "^3.7.5"
     },
     "name": "@masx200/baidupcs-batch-upload",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "main": "index.js",
     "license": "MIT",
     "devDependencies": {},
