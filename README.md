@@ -1,6 +1,6 @@
 # baidupcs-batch-upload
 
-使用 baidupcs-go,百度网盘批量上传图片
+使用 `baidupcs-go`,百度网盘批量上传图片
 
 https://github.com/iikira/BaiduPCS-Go
 
