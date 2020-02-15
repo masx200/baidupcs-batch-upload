@@ -36,7 +36,9 @@ export async function upload(file, destination) {
                 }, 5000);
             });
         } else {
-            throw new Error("baidupcs-go:" + stdout);
+            throw new Error(
+                "baidupcs-go:" + JSON.stringify({ stdout, stderr })
+            );
         }
     } else {
         console.log("文件上传成功", file);
