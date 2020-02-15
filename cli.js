@@ -4,10 +4,12 @@ import { start } from "./index.js";
 import { parseargs } from "./parse-args.js";
 const argsobj = parseargs(process.argv.slice(2));
 const { inputdir, destdir } = argsobj;
-
+/* 添加反向的参数可选 */
+const reverse =!! argsobj['reverse'];
 if (inputdir && destdir) {
-    console.log({ inputdir, destdir });
-    start(inputdir, destdir);
+    
+    console.log({ inputdir, destdir,reverse });
+    start(inputdir, destdir,reverse);
 } else {
     console.error("使用baidupcs-go,百度网盘批量上传图片");
     console.error("示例:");

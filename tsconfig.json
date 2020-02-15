@@ -1,5 +1,6 @@
 {
-    "include": ["*.js", "*.ts"],
+    "exclude": ["*.d.ts"],
+    "include": ["*.js"],
     "compilerOptions": {
         "pretty": true,
         "removeComments": true,

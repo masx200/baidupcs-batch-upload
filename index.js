@@ -19,17 +19,18 @@ let 完成数 = 0;
  * 
  *@param {string} inputdir
  *@param {string} destdir
+ *@param {boolean} reverse
 
  *  */
 
-const start = async (inputdir, destdir) => {
+const start = async (inputdir, destdir, reverse = false) => {
     const filedatas = await findfile(path.resolve(inputdir));
     总数 = filedatas.length;
     console.log("找到文件" + filedatas.length + "个");
     console.log(JSON.stringify(filedatas, null, 4));
     const 输入目录名 = path.basename(inputdir);
-
-    filedatas.forEach(
+    const filelist = reverse ? filedatas.reverse() : filedatas;
+    filelist.forEach(
         /**
          * @param {string} file
          */
