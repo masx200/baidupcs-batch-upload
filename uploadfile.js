@@ -1,3 +1,18 @@
+const errormsg = "全部上传完毕, 总大小: 0B";
+const retrymsg = [
+    "网络错误, http 响应错误,",
+    `遇到错误, 远端服务器返回错误, 代码: 31352, 消息: commit superfile2 failed`,
+    `网络错误, Post`,
+    `json 数据解析失败,`,
+    "获取文件列表错误, 获取目录下的文件列表",
+    "网络错误, Get",
+    `上传文件错误: 上传状态过期, 请重新上传`,
+    `上传文件失败, 分片上传—合并分片文件:`
+];
+const successmsg = [
+    "秒传成功, 保存到网盘路径:",
+    "上传文件成功, 保存到网盘路径:"
+];
 import baidupcsupload from "./baidupcsupload.js";
 /**
  * @param {string} file
@@ -15,18 +30,11 @@ export async function upload(file, destination) {
         stderr
     };
     console.log(JSON.stringify(记录日志, null, 4));
-    const errormsg = "全部上传完毕, 总大小: 0B";
-    const retrymsg = [
-        "网络错误, http 响应错误,",
-        `遇到错误, 远端服务器返回错误, 代码: 31352, 消息: commit superfile2 failed`,
-        `网络错误, Post`,
-        `json 数据解析失败,`,
-        "获取文件列表错误, 获取目录下的文件列表",
-        "网络错误, Get",
-        `上传文件错误: 上传状态过期, 请重新上传`,
-        `上传文件失败, 分片上传—合并分片文件:`
-    ];
-    if (stdout.includes(errormsg)) {
+    /* 判断是否上传成功与失败 */
+    if (
+        !successmsg.some(m => stdout.includes(m)) &&
+        stdout.includes(errormsg)
+    ) {
         if (retrymsg.some(msg => stdout.includes(msg))) {
             console.warn(stdout);
             console.warn("上传失败,5秒后重试:" + file);
