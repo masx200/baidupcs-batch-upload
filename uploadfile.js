@@ -17,6 +17,7 @@ export async function upload(file, destination) {
     console.log(JSON.stringify(记录日志, null, 4));
     const errormsg = "全部上传完毕, 总大小: 0B";
     const retrymsg = [
+        "网络错误, http 响应错误,",
         `遇到错误, 远端服务器返回错误, 代码: 31352, 消息: commit superfile2 failed`,
         `网络错误, Post`,
         `json 数据解析失败,`,
