@@ -37,7 +37,7 @@ export async function upload(file, destination) {
     }
 
     if (retrymsg.some(msg => stdout.includes(msg))) {
-        console.warn(stdout);
+        console.warn(stdout,stderr);
         console.warn("上传失败,5秒后重试:" + file);
         return new Promise(res => {
             setTimeout(() => {
