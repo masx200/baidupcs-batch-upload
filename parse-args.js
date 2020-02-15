@@ -37,7 +37,7 @@ export { parseargs };
 //  */
 
 //  /**
-//   * 
+//   *
 //   * @type{bbb}
 //   */
 // export function ccc(x,y){return [y,x]}
