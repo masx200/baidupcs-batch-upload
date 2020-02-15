@@ -7,12 +7,12 @@ export async function upload(file, destination) {
     const localfile = file;
     const desdir = destination;
     const result = await baidupcsupload(file, destination);
-    const { stdout } = result;
+    const { stdout, stderr } = result;
     const 记录日志 = {
-        // file,
         localfile,
         desdir,
-        stdout
+        stdout,
+        stderr
     };
     console.log(JSON.stringify(记录日志, null, 4));
     const errormsg = "全部上传完毕, 总大小: 0B";
