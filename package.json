@@ -8,7 +8,7 @@
         "start": "node --experimental-modules --experimental-json-modules ./cli.js "
     },
     "dependencies": {
-        "@masx200/async-task-current-limiter": "^1.0.4",
+        "@masx200/async-task-current-limiter": "^1.0.6",
         "@types/find": "^0.2.1",
         "@types/fs-extra": "^8.0.1",
         "@types/node": "^13.7.1",
