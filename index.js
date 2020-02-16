@@ -30,19 +30,33 @@ const start = async (inputdir, destdir/*, reverse = false*/) => {
     console.log(JSON.stringify(filedatas, null, 4));
     const 输入目录名 = path.basename(inputdir);
     const filelist =filedatas// reverse ? filedatas.reverse() : filedatas;
-    filelist.forEach(
-        /**
-         * @param {string} file
-         */
-        async file => {
-            // 给上传目标文件夹添加了输入文件夹的名字
-            /*
-             */
-            const destination = posix.dirname(
+  
+   const destlist=filelist.map(file=>{
+   const destination = posix.dirname(
                 posix
                     .resolve(destdir, 输入目录名, path.relative(inputdir, file))
                     .replace(/\\/g, "/")
             );
+       return destination
+   
+   }) 
+    
+    
+    filelist.forEach(
+        /**
+         * @param {string} file
+         */
+        async (file,index )=> {
+            // 给上传目标文件夹添加了输入文件夹的名字
+            /*
+             */
+            const destination =destlist[index]
+                  
+                  /*posix.dirname(
+                posix
+                    .resolve(destdir, 输入目录名, path.relative(inputdir, file))
+                    .replace(/\\/g, "/")
+            );*/
             await upload(file, destination);
             完成数++;
             console.log("完成进度:", `${完成数} / ${总数}`);
