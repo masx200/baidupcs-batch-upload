@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@masx200/async-task-current-limiter@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/@masx200/async-task-current-limiter/-/async-task-current-limiter-1.0.6.tgz#b1bfcae3e1a3993248d7190a75531e4957b2f59f"
-  integrity sha512-lj13vsheYYWZRsIDxWglfakOKT9deGUmugjQcd6q7BoITe1cNoZmvY3+Js7AjVmOC2tG2NndCxoiCq1/4jyL9Q==
+"@masx200/async-task-current-limiter@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/@masx200/async-task-current-limiter/-/async-task-current-limiter-1.0.7.tgz#3ece89cdad6729d611d4db0760a4c30c0f761629"
+  integrity sha512-e4Z/s6KnXU+1pansTfaRaseF/dvLYnIDn8UrubzbF0N/gRpxnpgMG/IPZofW8deiHnE08eMQDt/dTl0KSnPxtQ==
   dependencies:
     "@masx200/event-emitter-target" "^1.1.5"
 
