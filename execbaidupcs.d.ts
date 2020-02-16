@@ -1,5 +1,5 @@
 /// <reference types="node" />
-export default function _default(
+export default function(
     localfile: string,
     desdir: string
 ): import("child_process").PromiseWithChild<{

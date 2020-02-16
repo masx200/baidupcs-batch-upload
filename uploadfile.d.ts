@@ -1,1 +1,4 @@
-export function upload(file: string, destination: string): Promise<any>;
+export declare function upload(
+    file: string,
+    destination: string
+): Promise<unknown>;

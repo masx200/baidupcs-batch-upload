@@ -1,10 +1,12 @@
 {
+    "version": "1.0.3",
     "types": "index.d.ts",
     "module": "index.js",
     "type": "module",
     "scripts": {
+        "watch": "tsc --watch",
         "build": "tsc",
-        "prettier": "prettier *.js --write *.json *.md",
+        "prettier": "prettier *.ts *.js --write *.json *.md",
         "start": "node --experimental-modules --experimental-json-modules ./cli.js "
     },
     "dependencies": {
@@ -19,7 +21,6 @@
         "typescript": "^3.7.5"
     },
     "name": "@masx200/baidupcs-batch-upload",
-    "version": "1.0.2",
     "main": "index.js",
     "license": "MIT",
     "devDependencies": {},

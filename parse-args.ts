@@ -1,5 +1,12 @@
-function parseargs(args) {
-    const 参数obj = {};
+/**
+ * @param {string[]} args
+ * @returns {Record<string,string>}
+ */
+function parseargs(args: string[]): Record<string, string> {
+    /**
+     * @type{Record<string,string>}
+     */
+    const 参数obj: Record<string, string> = {};
     args.filter(s => s.startsWith("--"))
         .map(s => /--(?<key>.+)=(?<value>.+)/g.exec(s))
         .forEach(execArray => {
@@ -17,3 +24,20 @@ function parseargs(args) {
     return 参数obj;
 }
 export { parseargs };
+// //# sourceMappingURL=parse-args.js.map
+// /**
+//  * @template T
+//  * @param {T}x
+//  * @returns {Array<T>}
+//  */
+// export function aaa(x){return [x]}
+
+// /**
+//  * @typedef{<T>(a:string,y:T)=>{0:T,1: a}}bbb
+//  */
+
+//  /**
+//   *
+//   * @type{bbb}
+//   */
+// export function ccc(x,y){return [y,x]}

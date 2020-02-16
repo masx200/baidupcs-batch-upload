@@ -1,5 +1,10 @@
 import find from "find";
-function findfiles(root) {
+/**
+ *
+ * @param {string} root
+ * @returns{Promise<string[]>}
+ */
+function findfiles(root: string): Promise<string[]> {
     return new Promise((s, j) => {
         find.file(root, files => {
             s(files);

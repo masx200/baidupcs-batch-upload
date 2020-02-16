@@ -1,3 +1,3 @@
 /// <reference types="node" />
-export const limitexec: typeof execFile.__promisify__;
 import { execFile } from "child_process";
+export declare const limitexec: typeof execFile.__promisify__;

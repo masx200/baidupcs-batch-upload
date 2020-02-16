@@ -14,7 +14,11 @@ const successmsg = [
     "上传文件成功, 保存到网盘路径:"
 ];
 import baidupcsupload from "./execbaidupcs.js";
-export async function upload(file, destination) {
+/**
+ * @param {string} file
+ * @param {string} destination
+ */
+export async function upload(file: string, destination: string) {
     const localfile = file;
     const desdir = destination;
     const result = await baidupcsupload(file, destination);
@@ -26,10 +30,12 @@ export async function upload(file, destination) {
         stderr
     };
     console.log(JSON.stringify(记录日志, null, 4));
+    /* 判断是否上传成功与失败 */
     if (successmsg.some(m => stdout.includes(m))) {
         console.log("文件上传成功", file);
         return;
     }
+
     if (retrymsg.some(msg => stdout.includes(msg))) {
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
@@ -39,6 +45,7 @@ export async function upload(file, destination) {
             }, 5000);
         });
     }
+
     throw new Error(
         "command failure! baidupcs-go:" + JSON.stringify({ stdout, stderr })
     );
