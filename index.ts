@@ -28,7 +28,7 @@ const start = async (
     destdir: string /*, reverse = false*/
 ) => {
     const filedatas = await findfile(path.resolve(inputdir));
-    总数 = filedatas.length;
+    // 总数 = filedatas.length;
     console.log("找到文件" + filedatas.length + "个");
     console.log(JSON.stringify(filedatas, null, 4));
     const 输入目录名 = path.basename(inputdir);
@@ -43,7 +43,7 @@ const start = async (
         return filesizes[index];
     });
     // reverse ? filedatas.reverse() : filedatas;
-
+    总数 = filelist.length;
     const destlist = filelist.map(file => {
         const destination = posix.dirname(
             posix
