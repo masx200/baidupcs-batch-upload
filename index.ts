@@ -1,6 +1,6 @@
 // const inputdir = `D:/baidupandownload/微博美图相册-2020-02-13`;
 // const destdir = `/!我的图片-2020-02-10/微博美图相册-2020-02-13`;
-
+import fs from "fs";
 import path, { posix } from "path";
 import process from "process";
 import findfile from "./findfiles.js";
@@ -32,7 +32,17 @@ const start = async (
     console.log("找到文件" + filedatas.length + "个");
     console.log(JSON.stringify(filedatas, null, 4));
     const 输入目录名 = path.basename(inputdir);
-    const filelist = filedatas; // reverse ? filedatas.reverse() : filedatas;
+    /* 要把文件大小为0的文件排除,否则上传失败 */
+    const filesizes = await Promise.all(
+        filedatas.map(async file => {
+            const stat = await fs.promises.stat(file);
+            return stat.size;
+        })
+    );
+    const filelist = filedatas.filter((file, index) => {
+        return filesizes[index];
+    });
+    // reverse ? filedatas.reverse() : filedatas;
 
     const destlist = filelist.map(file => {
         const destination = posix.dirname(

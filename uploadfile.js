@@ -39,7 +39,5 @@ export async function upload(file, destination) {
             }, 5000);
         });
     }
-    throw new Error(
-        "command failure! baidupcs-go:" + JSON.stringify({ stdout, stderr })
-    );
+    throw new Error("command failure! baidupcs-go:" + JSON.stringify({ stdout, stderr }));
 }

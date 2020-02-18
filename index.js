@@ -1,10 +1,10 @@
+import fs from "fs";
 import path, { posix } from "path";
 import process from "process";
 import findfile from "./findfiles.js";
 import { upload } from "./uploadfile.js";
 import os from "os";
-export const cmd =
-    "win32" === os.platform() ? "BaiduPCS-Go.exe" : "BaiduPCS-Go";
+export const cmd = "win32" === os.platform() ? "BaiduPCS-Go.exe" : "BaiduPCS-Go";
 process.on("unhandledRejection", e => {
     throw e;
 });
@@ -16,13 +16,17 @@ const start = async (inputdir, destdir) => {
     console.log("找到文件" + filedatas.length + "个");
     console.log(JSON.stringify(filedatas, null, 4));
     const 输入目录名 = path.basename(inputdir);
-    const filelist = filedatas;
+    const filesizes = await Promise.all(filedatas.map(async (file) => {
+        const stat = await fs.promises.stat(file);
+        return stat.size;
+    }));
+    const filelist = filedatas.filter((file, index) => {
+        return filesizes[index];
+    });
     const destlist = filelist.map(file => {
-        const destination = posix.dirname(
-            posix
-                .resolve(destdir, 输入目录名, path.relative(inputdir, file))
-                .replace(/\\/g, "/")
-        );
+        const destination = posix.dirname(posix
+            .resolve(destdir, 输入目录名, path.relative(inputdir, file))
+            .replace(/\\/g, "/"));
         return destination;
     });
     filelist.forEach(async (file, index) => {

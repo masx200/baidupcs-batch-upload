@@ -2,7 +2,7 @@ import AsyncLimiter from "@masx200/async-task-current-limiter";
 import { execFile } from "child_process";
 import { promisify } from "util";
 const limiter = AsyncLimiter(15);
-const listener = data => console.log("限流状态" + JSON.stringify(data));
+const listener = (data) => console.log("限流状态" + JSON.stringify(data));
 limiter.target.on("free", listener);
 limiter.target.on("full", listener);
 const execpro = promisify(execFile);
