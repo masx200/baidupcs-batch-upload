@@ -1,5 +1,5 @@
-// const inputdir = `D:/baidupandownload/微博美图相册-2020-02-13`;
-// const destdir = `/!我的图片-2020-02-10/微博美图相册-2020-02-13`;
+// const input = `D:/baidupandownload/微博美图相册-2020-02-13`;
+// const dest = `/!我的图片-2020-02-10/微博美图相册-2020-02-13`;
 import fs from "fs";
 import path, { posix } from "path";
 import process from "process";
@@ -17,21 +17,18 @@ let 完成数 = 0;
 /**
  * 
  * 
- *@param {string} inputdir
- *@param {string} destdir
+ *@param {string} input
+ *@param {string} dest
  * 
 
  *  */
 
-const start = async (
-    inputdir: string,
-    destdir: string /*, reverse = false*/
-) => {
-    const filedatas = await findfile(path.resolve(inputdir));
+const start = async (input: string, dest: string /*, reverse = false*/) => {
+    const filedatas = await findfile(path.resolve(input));
     // 总数 = filedatas.length;
     console.log("找到文件" + filedatas.length + "个");
     console.log(JSON.stringify(filedatas, null, 4));
-    const 输入目录名 = path.basename(inputdir);
+    const 输入目录名 = path.basename(input);
     /* 要把文件大小为0的文件排除,否则上传失败 */
     const filesizes = await Promise.all(
         filedatas.map(async file => {
@@ -47,7 +44,7 @@ const start = async (
     const destlist = filelist.map(file => {
         const destination = posix.dirname(
             posix
-                .resolve(destdir, 输入目录名, path.relative(inputdir, file))
+                .resolve(dest, 输入目录名, path.relative(input, file))
                 .replace(/\\/g, "/")
         );
         return destination;
@@ -65,7 +62,7 @@ const start = async (
 
             /*posix.dirname(
                 posix
-                    .resolve(destdir, 输入目录名, path.relative(inputdir, file))
+                    .resolve(dest, 输入目录名, path.relative(input, file))
                     .replace(/\\/g, "/")
             );*/
             await upload(file, destination);

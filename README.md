@@ -30,11 +30,11 @@ yarn start
 
 # 命令行示例
 
-必选参数 `inputdir`:输入本地图片目录 `string`
+必选参数 `input`:输入本地图片目录 `string`
 
-必选参数 `destdir`:输出网盘图片目录 `string`
+必选参数 `dest`:输出网盘图片目录 `string`
 
 ```shell
 
-node ./cli.js --inputdir=D:/baidupandownload/图片输入本地 --destdir=/baidupandownload/图片输出网盘
+node ./cli.js --input=D:/baidupandownload/图片输入本地 --dest=/baidupandownload/图片输出网盘
 ```

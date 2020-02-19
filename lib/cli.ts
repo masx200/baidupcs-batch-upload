@@ -3,17 +3,17 @@ import process from "process";
 import { start } from "./index.js";
 import { parseargs } from "./parse-args.js";
 const argsobj = parseargs(process.argv.slice(2));
-const { inputdir, destdir } = argsobj;
+const { input, dest } = argsobj;
 /* 添加反向的参数可选 */
 //const reverse = !!argsobj["reverse"];
-if (inputdir && destdir) {
-    console.log({ inputdir, destdir /*, reverse */ });
-    start(inputdir, destdir /*, reverse*/);
+if (input && dest) {
+    console.log({ input, dest /*, reverse */ });
+    start(input, dest /*, reverse*/);
 } else {
     console.error("使用baidupcs-go,百度网盘批量上传图片");
     console.error("示例:");
     console.error(
-        `node ./cli.js --inputdir=D:/baidupandownload/图片输入本地 --destdir=/baidupandownload/图片输出网盘`
+        `node ./cli.js --input=D:/baidupandownload/图片输入本地 --dest=/baidupandownload/图片输出网盘`
     );
 
     console.error("输入的参数有误!");
