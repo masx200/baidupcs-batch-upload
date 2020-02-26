@@ -10,7 +10,7 @@ https://github.com/iikira/BaiduPCS-Go
 
 # 使用方法
 
-安装 `node_modules`
+## 安装 `node_modules`
 
 ```shell
 yarn install
