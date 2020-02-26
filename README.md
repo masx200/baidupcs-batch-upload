@@ -1,6 +1,6 @@
 # baidupcs-batch-upload
 
-使用 `baidupcs-go`,百度网盘批量上传图片
+使用 `baidupcs-go`,百度网盘批量上传文件
 
 https://github.com/iikira/BaiduPCS-Go
 
@@ -36,9 +36,9 @@ BaiduPCS-Go login
 
 # 命令行示例
 
-必选参数 `input`:输入本地图片目录 `string`
+必选参数 `input`:输入本地文件目录 `string`
 
-必选参数 `dest`:输出网盘图片目录 `string`
+必选参数 `dest`:输出网盘文件目录 `string`
 
 ```shell
 
