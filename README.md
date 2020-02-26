@@ -28,6 +28,12 @@ yarn build
 yarn start
 ```
 
+# 使用之前先登陆
+
+```shell
+BaiduPCS-Go login
+```
+
 # 命令行示例
 
 必选参数 `input`:输入本地图片目录 `string`
