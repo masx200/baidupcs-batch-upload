@@ -2,7 +2,7 @@ import AsyncLimiter from "@masx200/async-task-current-limiter";
 import { execFile } from "child_process";
 import { promisify } from "util";
 
-const limiter = AsyncLimiter(15);
+const limiter = AsyncLimiter(12);
 /**
  * @param {any} data
  */
