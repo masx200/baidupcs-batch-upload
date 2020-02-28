@@ -6,9 +6,9 @@ const limiter = AsyncLimiter(12);
 /**
  * @param {any} data
  */
-const listener = (data: any) => console.log("限流状态" + JSON.stringify(data));
-limiter.target.on("free", listener);
-limiter.target.on("full", listener);
+// const listener = (data: any) => console.log("限流状态" + JSON.stringify(data));
+// limiter.target.on("free", listener);
+// limiter.target.on("full", listener);
 const execpro = promisify(execFile);
 
 export const limitexec = limiter.asyncwrap(execpro);
