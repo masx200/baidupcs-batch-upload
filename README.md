@@ -8,6 +8,10 @@ https://github.com/iikira/BaiduPCS-Go
 
 如果遇到 8 种网络问题上传失败,则自动重试，比直接用 一个 `BaiduPCS-Go` 命令上传更快
 
+目前适配的版本为
+
+BaiduPCS-Go version v3.6.2
+
 # 使用方法
 
 ## 安装 `node_modules`
