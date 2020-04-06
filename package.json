@@ -19,7 +19,7 @@
         "fs-extra": "^8.1.0",
         "prettier": "^1.19.1",
         "tslib": "^1.10.0",
-        "typescript": "^3.7.5"
+        "typescript": "^3.8.3"
     },
     "name": "@masx200/baidupcs-batch-upload",
     "license": "MIT",
