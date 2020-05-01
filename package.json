@@ -1,6 +1,11 @@
 {
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
+    "name": "@masx200/baidupcs-batch-upload",
+    "bin": " ./lib/cli.js",
     "main": "./lib/index.js",
-    "version": "1.0.6",
+    "version": "1.1.0",
     "types": "./lib/index.d.ts",
     "module": "./lib/index.js",
     "type": "module",
@@ -12,18 +17,18 @@
     },
     "dependencies": {
         "@masx200/async-task-current-limiter": "^1.0.7",
+        "find": "^0.3.0",
+        "fs-extra": "^8.1.0"
+    },
+    "license": "MIT",
+    "devDependencies": {
         "@types/find": "^0.2.1",
         "@types/fs-extra": "^8.0.1",
         "@types/node": "^13.7.1",
-        "find": "^0.3.0",
-        "fs-extra": "^8.1.0",
         "prettier": "^1.19.1",
         "tslib": "^1.10.0",
         "typescript": "^3.8.3"
     },
-    "name": "@masx200/baidupcs-batch-upload",
-    "license": "MIT",
-    "devDependencies": {},
     "keywords": [],
     "author": "masx200 <34191203+masx200@users.noreply.github.com>",
     "description": "使用baidupcs-go,百度网盘批量上传图片",

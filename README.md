@@ -14,6 +14,12 @@ BaiduPCS-Go version v3.6.2
 
 # 使用方法
 
+安装
+
+```shell
+npm i -g @masx200/baidupcs-batch-upload
+```
+
 ## 安装 `node_modules`
 
 ```shell
@@ -47,4 +53,8 @@ BaiduPCS-Go login
 ```shell
 
 node ./cli.js --input=D:/baidupandownload/图片输入本地 --dest=/baidupandownload/图片输出网盘
+```
+
+```shell
+npx @masx200/baidupcs-batch-upload --input=D:/baidupandownload/图片输入本地 --dest=/baidupandownload/图片输出网盘
 ```
