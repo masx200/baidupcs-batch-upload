@@ -1,4 +1,5 @@
 const retrymsg = [
+    "打开上传未完成数据库错误:",
     "以下文件上传失败:",
     "网络错误, http 响应错误,",
     `遇到错误, 远端服务器返回错误, 代码: 31352, 消息: commit superfile2 failed`,
