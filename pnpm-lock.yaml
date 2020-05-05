@@ -1,0 +1,115 @@
+dependencies:
+  '@masx200/async-task-current-limiter': 1.0.8
+  find: 0.3.0
+  fs-extra: 8.1.0
+devDependencies:
+  '@types/find': 0.2.1
+  '@types/fs-extra': 8.1.0
+  '@types/node': 13.13.4
+  prettier: 1.19.1
+  tslib: 1.11.1
+  typescript: 3.8.3
+lockfileVersion: 5.1
+packages:
+  /@masx200/async-task-current-limiter/1.0.8:
+    dependencies:
+      '@masx200/event-emitter-target': 1.1.7
+    dev: false
+    resolution:
+      integrity: sha1-yyOGdgCInEcPGAbJ7Gy2DDUF9e8=
+      tarball: '@masx200/async-task-current-limiter/download/@masx200/async-task-current-limiter-1.0.8.tgz'
+  /@masx200/event-emitter-target/1.1.7:
+    dev: false
+    resolution:
+      integrity: sha1-EXV6gFMUiG7LVKWqX6toFbM7CRM=
+      tarball: '@masx200/event-emitter-target/download/@masx200/event-emitter-target-1.1.7.tgz'
+  /@types/find/0.2.1:
+    dev: true
+    resolution:
+      integrity: sha1-6NDXqVK+LZB2jW+N1/LmYwuyYPg=
+      tarball: '@types/find/download/@types/find-0.2.1.tgz'
+  /@types/fs-extra/8.1.0:
+    dependencies:
+      '@types/node': 13.13.4
+    dev: true
+    resolution:
+      integrity: sha1-ERSDS1PDkUgGzQOzMEs3s70iGk0=
+      tarball: '@types/fs-extra/download/@types/fs-extra-8.1.0.tgz?cache=0&sync_timestamp=1588688428794&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Ffs-extra%2Fdownload%2F%40types%2Ffs-extra-8.1.0.tgz'
+  /@types/node/13.13.4:
+    dev: true
+    resolution:
+      integrity: sha1-FYHWwW49SAPrB5yH1KyJPudQHCw=
+      tarball: '@types/node/download/@types/node-13.13.4.tgz'
+  /find/0.3.0:
+    dependencies:
+      traverse-chain: 0.1.0
+    dev: false
+    resolution:
+      integrity: sha1-QILo/I2DIPGjgrXk9SG5vFB3XLg=
+      tarball: find/download/find-0.3.0.tgz
+  /fs-extra/8.1.0:
+    dependencies:
+      graceful-fs: 4.2.4
+      jsonfile: 4.0.0
+      universalify: 0.1.2
+    dev: false
+    engines:
+      node: '>=6 <7 || >=8'
+    resolution:
+      integrity: sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=
+      tarball: fs-extra/download/fs-extra-8.1.0.tgz
+  /graceful-fs/4.2.4:
+    dev: false
+    resolution:
+      integrity: sha1-Ila94U02MpWMRl68ltxGfKB6Kfs=
+      tarball: graceful-fs/download/graceful-fs-4.2.4.tgz?cache=0&sync_timestamp=1588086876757&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fgraceful-fs%2Fdownload%2Fgraceful-fs-4.2.4.tgz
+  /jsonfile/4.0.0:
+    dev: false
+    optionalDependencies:
+      graceful-fs: 4.2.4
+    resolution:
+      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
+      tarball: jsonfile/download/jsonfile-4.0.0.tgz
+  /prettier/1.19.1:
+    dev: true
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha1-99f1/4qc2HKnvkyhQglZVqYHl8s=
+      tarball: prettier/download/prettier-1.19.1.tgz
+  /traverse-chain/0.1.0:
+    dev: false
+    resolution:
+      integrity: sha1-YdvC1Ttp/2CRoSoWj9fUMxB+QPE=
+      tarball: traverse-chain/download/traverse-chain-0.1.0.tgz
+  /tslib/1.11.1:
+    dev: true
+    resolution:
+      integrity: sha1-6xXRKIJ/vuKEFUnhcfRe0zisfjU=
+      tarball: tslib/download/tslib-1.11.1.tgz
+  /typescript/3.8.3:
+    dev: true
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha1-QJ64VE6gM1cRIFhp7EWKsQnuEGE=
+      tarball: typescript/download/typescript-3.8.3.tgz
+  /universalify/0.1.2:
+    dev: false
+    engines:
+      node: '>= 4.0.0'
+    resolution:
+      integrity: sha1-tkb2m+OULavOzJ1mOcgNwQXvqmY=
+      tarball: universalify/download/universalify-0.1.2.tgz
+specifiers:
+  '@masx200/async-task-current-limiter': ^1.0.8
+  '@types/find': ^0.2.1
+  '@types/fs-extra': ^8.0.1
+  '@types/node': ^13.7.1
+  find: ^0.3.0
+  fs-extra: ^8.1.0
+  prettier: ^1.19.1
+  tslib: ^1.10.0
+  typescript: ^3.8.3
