@@ -5,7 +5,7 @@
     "name": "@masx200/baidupcs-batch-upload",
     "bin": "./lib/cli.js",
     "main": "./lib/index.js",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "types": "./lib/index.d.ts",
     "module": "./lib/index.js",
     "type": "module",
