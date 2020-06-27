@@ -1,6 +1,6 @@
 # baidupcs-batch-upload
 
-使用 `baidupcs-go`,百度网盘批量上传文件
+使用 `baidupcs-go`,百度网盘批量上传文件,高并发支持
 
 https://github.com/iikira/BaiduPCS-Go
 
@@ -8,7 +8,7 @@ https://github.com/iikira/BaiduPCS-Go
 
 如果遇到 8 种网络问题上传失败,则自动重试，比直接用 一个 `BaiduPCS-Go` 命令上传更快
 
-目前适配的版本为
+# 目前适配的版本
 
 BaiduPCS-Go version v3.6.2
 
@@ -69,4 +69,17 @@ npx @masx200/baidupcs-batch-upload --input=D:/baidupandownload/图片输入本�
 
 ```shell
 npx @masx200/baidupcs-batch-upload --input=D:/baidupandownload/图片输入本地 --dest=/baidupandownload/图片输出网盘 --concurrent=20
+```
+
+对于windows系统,
+
+如果是带空格的本地目录/网盘目录场景,
+
+可以使用如下命令:
+
+
+
+```powershell
+
+baidupcs-batch-upload.cmd --input="d:\2 2" --dest="/test/t s" --concurrent=20
 ```
