@@ -54,7 +54,7 @@ BaiduPCS-Go login
 
 必选参数 `input`:类型`string`,输入本地文件目录
 
-必选参数 `dest`:类型`string`,输出网盘文件目录
+必选参数 `dest`:类型`string`,上传到的网盘文件目录
 
 可选参数`concurrent`:类型`number`,同时并发的上传文件个数
 
