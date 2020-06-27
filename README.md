@@ -71,13 +71,11 @@ npx @masx200/baidupcs-batch-upload --input=D:/baidupandownload/图片输入本�
 npx @masx200/baidupcs-batch-upload --input=D:/baidupandownload/图片输入本地 --dest=/baidupandownload/图片输出网盘 --concurrent=20
 ```
 
-对于windows系统,
+对于 windows 系统,
 
 如果是带空格的本地目录/网盘目录场景,
 
 可以使用如下命令:
-
-
 
 ```powershell
 
