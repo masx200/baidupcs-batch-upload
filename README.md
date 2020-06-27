@@ -12,6 +12,12 @@ https://github.com/iikira/BaiduPCS-Go
 
 BaiduPCS-Go version v3.6.2
 
+BaiduPCS-Go-v3.6.2-windows-x64
+
+下载网址
+
+https://share.weiyun.com/4ZFFhW4E
+
 # 使用方法
 
 安装
