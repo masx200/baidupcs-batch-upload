@@ -1,0 +1,42 @@
+file:///C:/Users/ma/AppData/Local/Yarn/Data/global/node_modules/@masx200/baidupcs-batch-upload/lib/index.js:9
+    throw e;
+    ^
+
+Error: Command failed: BaiduPCS-Go.exe upload d:\Pictures\手机相册\手机相册-2020年7月9日\Screenshots\24b8595ffb846b16d8106adc222b2d08.webp /我的图片-2020年6月25日/手机相册/手机相册-2020年7月9日/Screenshots
+panic: runtime error: index out of range
+
+goroutine 25 [running]:
+github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload.(*UploadingDatabase).UpdateUploading(0xc0422de8d0, 0xc0421e23f0, 0xc0422ce9c0)
+        /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload/upload_database.go:101 +0x279
+github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload.(*UploadTaskUnit).upload.func1(0xa65160, 0xc04237a700, 0xc0422bc0c0)
+        /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload/upload_task_unit.go:208 +0x399
+github.com/iikira/BaiduPCS-Go/requester/uploader.(*MultiUploader).uploadStatusEvent.func1(0xc042278410)
+        /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/requester/uploader/status.go:93 +0x1a1
+created by github.com/iikira/BaiduPCS-Go/requester/uploader.(*MultiUploader).uploadStatusEvent
+        /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/requester/uploader/status.go:84 +0x4f
+
+    at ChildProcess.exithandler (child_process.js:303:12)
+    at ChildProcess.emit (events.js:315:20)
+    at maybeClose (internal/child_process.js:1051:16)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:287:5) {
+  killed: false,
+  code: 2,
+  signal: null,
+  cmd: 'BaiduPCS-Go.exe upload d:\\Pictures\\手机相册\\手机相册-2020年7月9日\\Screenshots\\24b8595ffb846b16d8106adc222b2d08.webp /我的图片-2020年6月25日/手机相册/手机相册-2020年7月9日/Screenshots',
+  stdout: '[1] 加入上传队列: d:/Pictures/手机相册/手机相册-2020年7月9日/Screenshots/24b8595ffb846b16d8106adc222b2d08.webp\n' +
+    '[1] 准备上传: d:/Pictures/手机相册/手机相册-2020年7月9日/Screenshots/24b8595ffb846b16d8106adc222b2d08.webp\n' +
+    '[1] 秒传失败, 开始上传文件...\n' +
+    '\n' +
+    '\n' +
+    '[1] 上传文件成功, 保存到网盘路径: /我的图片-2020年6月25日/手机相册/手机相册-2020年7月9日/Screenshots/24b8595ffb846b16d8106adc222b2d08.webp\n',
+  stderr: 'panic: runtime error: index out of range\n' +
+    '\n' +
+    'goroutine 25 [running]:\n' +
+    'github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload.(*UploadingDatabase).UpdateUploading(0xc0422de8d0, 0xc0421e23f0, 0xc0422ce9c0)\n' +
+    '\t/Users/syy/go/src/github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload/upload_database.go:101 +0x279\n' +
+    'github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload.(*UploadTaskUnit).upload.func1(0xa65160, 0xc04237a700, 0xc0422bc0c0)\n' +
+    '\t/Users/syy/go/src/github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload/upload_task_unit.go:208 +0x399\n' +
+    'github.com/iikira/BaiduPCS-Go/requester/uploader.(*MultiUploader).uploadStatusEvent.func1(0xc042278410)\n' +
+    '\t/Users/syy/go/src/github.com/iikira/BaiduPCS-Go/requester/uploader/status.go:93 +0x1a1\n' +
+    'created by github.com/iikira/BaiduPCS-Go/requester/uploader.(*MultiUploader).uploadStatusEvent\n' +    '\t/Users/syy/go/src/github.com/iikira/BaiduPCS-Go/requester/uploader/status.go:84 +0x4f\n'
+}
