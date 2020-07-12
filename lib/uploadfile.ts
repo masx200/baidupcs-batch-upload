@@ -17,14 +17,33 @@ const successmsg = [
     "上传文件成功, 保存到网盘路径:"
 ];
 import baidupcsupload from "./execbaidupcs.js";
+const successerror = ["panic: runtime error: index out of range"];
+
 /**
  * @param {string} file
  * @param {string} destination
  */
-export async function upload(file: string, destination: string) {
+export async function upload(file: string, destination: string): Promise<void> {
     const localfile = file;
     const desdir = destination;
-    const result = await baidupcsupload(file, destination);
+    let result = { stdout: "", stderr: "" };
+    try {
+        result = await baidupcsupload(file, destination);
+    } catch (error) {
+        const { stdout, stderr } = error;
+        console.error(error);
+        console.error(JSON.stringify({ stdout, stderr }, null, 4));
+        if (
+            successerror.some(m => stderr?.includes(m)) &&
+            successmsg.some(m => stdout?.includes(m))
+        ) {
+            console.log("文件上传成功", file);
+            return;
+        } else {
+            throw error;
+        }
+    }
+
     const { stdout, stderr } = result;
     const 记录日志 = {
         localfile,
