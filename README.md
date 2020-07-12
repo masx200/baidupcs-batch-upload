@@ -63,7 +63,6 @@ BaiduPCS-Go login
 npx @masx200/baidupcs-batch-upload  --input=D:/baidupandownload/图片输入本地 --dest=/baidupandownload/图片输出网盘
 ```
 
-
 ```shell
 npx @masx200/baidupcs-batch-upload --input=D:/baidupandownload/图片输入本地 --dest=/baidupandownload/图片输出网盘 --concurrent=20
 ```

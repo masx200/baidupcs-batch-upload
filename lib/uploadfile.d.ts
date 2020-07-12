@@ -1,4 +1,4 @@
 export declare function upload(
     file: string,
     destination: string
-): Promise<unknown>;
+): Promise<void>;
