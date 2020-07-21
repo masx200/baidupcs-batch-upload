@@ -18,6 +18,8 @@ BaiduPCS-Go-v3.6.2-windows-x64
 
 https://github.com/masx200/baidupcs-batch-upload/releases/download/1.1.5/BaiduPCS-Go-v3.6.2-windows-x64.zip
 
+https://github.com/felixonmars/BaiduPCS-Go/releases/tag/v3.6.2
+
 # 使用方法
 
 安装
