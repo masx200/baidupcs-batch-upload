@@ -50,7 +50,7 @@ const start = async (input: string, dest: string /*, reverse = false*/) => {
         return destination;
     });
 
-    filelist.forEach(
+   await Promise.all( filelist.map(
         /**
          * @param {string} file
          */
@@ -69,6 +69,6 @@ const start = async (input: string, dest: string /*, reverse = false*/) => {
             完成数++;
             console.log("完成进度:", `${完成数} / ${总数}`);
         }
-    );
+    ));
 };
 export { start };
