@@ -25,9 +25,9 @@
         "@types/find": "^0.2.1",
         "@types/fs-extra": "^8.0.1",
         "@types/node": "^13.7.1",
-        "prettier": "^1.19.1",
+        "prettier": "^2.0.5",
         "tslib": "^1.10.0",
-        "typescript": "^3.8.3"
+        "typescript": "^3.9.7"
     },
     "keywords": [],
     "author": "masx200 <34191203+masx200@users.noreply.github.com>",

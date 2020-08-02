@@ -6,9 +6,9 @@ import find from "find";
  */
 function findfiles(root: string): Promise<string[]> {
     return new Promise((s, j) => {
-        find.file(root, files => {
+        find.file(root, (files) => {
             s(files);
-        }).error(e => {
+        }).error((e) => {
             j(e);
         });
     });

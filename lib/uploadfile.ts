@@ -9,12 +9,12 @@ const retrymsg = [
     "网络错误, Get",
     `上传文件错误: 上传状态过期, 请重新上传`,
     `上传文件失败, 分片上传—合并分片文件`,
-    "全部上传完毕, 总大小: 0B"
+    "全部上传完毕, 总大小: 0B",
 ];
 const successmsg = [
     ", 已存在, 跳过...",
     "秒传成功, 保存到网盘路径:",
-    "上传文件成功, 保存到网盘路径:"
+    "上传文件成功, 保存到网盘路径:",
 ];
 import baidupcsupload from "./execbaidupcs.js";
 const successerror = ["panic: runtime error: index out of range"];
@@ -34,8 +34,8 @@ export async function upload(file: string, destination: string): Promise<void> {
         console.error(error);
         console.error(JSON.stringify({ stdout, stderr }, null, 4));
         if (
-            successerror.some(m => stderr?.includes(m)) &&
-            successmsg.some(m => stdout?.includes(m))
+            successerror.some((m) => stderr?.includes(m)) &&
+            successmsg.some((m) => stdout?.includes(m))
         ) {
             console.log("文件上传成功", file);
             return;
@@ -49,19 +49,19 @@ export async function upload(file: string, destination: string): Promise<void> {
         localfile,
         desdir,
         stdout,
-        stderr
+        stderr,
     };
     console.log(JSON.stringify(记录日志, null, 4));
     /* 判断是否上传成功与失败 */
-    if (successmsg.some(m => stdout.includes(m))) {
+    if (successmsg.some((m) => stdout.includes(m))) {
         console.log("文件上传成功", file);
         return;
     }
 
-    if (retrymsg.some(msg => stdout.includes(msg))) {
+    if (retrymsg.some((msg) => stdout.includes(msg))) {
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
-        return new Promise(res => {
+        return new Promise((res) => {
             setTimeout(() => {
                 res(upload(file, destination));
             }, 5000);

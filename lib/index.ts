@@ -8,7 +8,7 @@ import { upload } from "./uploadfile.js";
 import os from "os";
 export const cmd =
     "win32" === os.platform() ? "BaiduPCS-Go.exe" : "BaiduPCS-Go";
-process.on("unhandledRejection", e => {
+process.on("unhandledRejection", (e) => {
     throw e;
 });
 let 总数 = 0;
@@ -31,7 +31,7 @@ const start = async (input: string, dest: string /*, reverse = false*/) => {
     const 输入目录名 = path.basename(input);
     /* 要把文件大小为0的文件排除,否则上传失败 */
     const filesizes = await Promise.all(
-        filedatas.map(async file => {
+        filedatas.map(async (file) => {
             const stat = await fs.promises.stat(file);
             return stat.size;
         })
@@ -41,7 +41,7 @@ const start = async (input: string, dest: string /*, reverse = false*/) => {
     });
     // reverse ? filedatas.reverse() : filedatas;
     总数 = filelist.length;
-    const destlist = filelist.map(file => {
+    const destlist = filelist.map((file) => {
         const destination = posix.dirname(
             posix
                 .resolve(dest, 输入目录名, path.relative(input, file))
@@ -50,25 +50,27 @@ const start = async (input: string, dest: string /*, reverse = false*/) => {
         return destination;
     });
 
-   await Promise.all( filelist.map(
-        /**
-         * @param {string} file
-         */
-        async (file, index) => {
-            // 给上传目标文件夹添加了输入文件夹的名字
-            /*
+    await Promise.all(
+        filelist.map(
+            /**
+             * @param {string} file
              */
-            const destination = destlist[index];
+            async (file, index) => {
+                // 给上传目标文件夹添加了输入文件夹的名字
+                /*
+                 */
+                const destination = destlist[index];
 
-            /*posix.dirname(
+                /*posix.dirname(
                 posix
                     .resolve(dest, 输入目录名, path.relative(input, file))
                     .replace(/\\/g, "/")
             );*/
-            await upload(file, destination);
-            完成数++;
-            console.log("完成进度:", `${完成数} / ${总数}`);
-        }
-    ));
+                await upload(file, destination);
+                完成数++;
+                console.log("完成进度:", `${完成数} / ${总数}`);
+            }
+        )
+    );
 };
 export { start };
