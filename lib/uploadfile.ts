@@ -46,6 +46,7 @@ export async function upload(file: string, destination: string): Promise<void> {
             console.log("文件上传成功", file);
             return;
         } else {
+                              //如果。找不到 baidupcs-go的可执行文件，则。会在这里报错
             throw error;
         }
     }
