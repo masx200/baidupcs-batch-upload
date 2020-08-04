@@ -14,7 +14,14 @@ const __dirname = dirname(__filename);
 const helppath = path.join(__dirname, "../help.txt");
 const helptxt = String(fs.readFileSync(helppath));
 if (input && dest) {
-    console.log({ input, dest /*, reverse */ });
+    console.log({ input, dest /*, reverse */ 
+                
+                
+                
+                ,concurrent
+                
+                
+                });
     start(input, dest /*, reverse*/);
 } else {
     console.error(helptxt);
