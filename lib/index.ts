@@ -23,7 +23,7 @@ let 完成数 = 0;
 
  *  */
 
- async start (input: string, dest: string 
+ async function start (input: string, dest: string 
 
 
 /*, reverse = false*/
