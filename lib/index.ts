@@ -23,12 +23,18 @@ let 完成数 = 0;
 
  *  */
 
-const start = async (input: string, dest: string /*, reverse = false*/) => {
+const start = async (input: string, dest: string 
+
+
+/*, reverse = false*/
+
+
+) => {
     const filedatas = await findfile(path.resolve(input));
     // 总数 = filedatas.length;
     console.log("找到文件" + filedatas.length + "个");
     console.log(JSON.stringify(filedatas, null, 4));
-    const 输入目录名 = path.basename(input);
+   
     /* 要把文件大小为0的文件排除,否则上传失败 */
     const filesizes = await Promise.all(
         filedatas.map(async (file) => {
@@ -41,15 +47,15 @@ const start = async (input: string, dest: string /*, reverse = false*/) => {
     });
     // reverse ? filedatas.reverse() : filedatas;
     总数 = filelist.length;
-    const destlist = filelist.map((file) => {
+   /* const destlist = filelist.map((file) => {
         const destination = posix.dirname(
             posix
-                .resolve(dest, 输入目录名, path.relative(input, file))
+                .resolve(dest, inputbase, path.relative(input, file))
                 .replace(/\\/g, "/")
         );
         return destination;
     });
-
+*/
     await Promise.all(
         filelist.map(
             /**
@@ -59,11 +65,12 @@ const start = async (input: string, dest: string /*, reverse = false*/) => {
                 // 给上传目标文件夹添加了输入文件夹的名字
                 /*
                  */
-                const destination = destlist[index];
+                const destination = resolvefiledestination(file,input,dest)
+//destlist[index];
 
                 /*posix.dirname(
                 posix
-                    .resolve(dest, 输入目录名, path.relative(input, file))
+                    .resolve(dest, inputbase, path.relative(input, file))
                     .replace(/\\/g, "/")
             );*/
                 await upload(file, destination);
@@ -75,3 +82,13 @@ const 进度="完成进度:"+ `${完成数} / ${总数}`
     );
 };
 export { start };
+function resolvefiledestination(file: string,input: string,dest: string){
+	 const inputbase = path.basename(input);
+const destination = posix.dirname(
+            posix
+                .resolve(dest, inputbase, path.relative(input, file))
+                .replace(/\\/g, "/")
+        );
+        return destination;
+
+}
