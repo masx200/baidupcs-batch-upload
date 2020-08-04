@@ -68,7 +68,8 @@ const start = async (input: string, dest: string /*, reverse = false*/) => {
             );*/
                 await upload(file, destination);
                 完成数++;
-                console.log("完成进度:", `${完成数} / ${总数}`);
+const 进度="完成进度:"+ `${完成数} / ${总数}`
+                console.log(进度);
             }
         )
     );
