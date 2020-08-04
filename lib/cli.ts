@@ -7,21 +7,19 @@ import process from "process";
 import { fileURLToPath } from "url";
 import { argsobj } from "./argsobj.js";
 import { start } from "./index.js";
-const { input, dest,concurrent } = argsobj;
+const { input, dest, concurrent } = argsobj;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const helppath = path.join(__dirname, "../help.txt");
 const helptxt = String(fs.readFileSync(helppath));
 if (input && dest) {
-    console.log({ input, dest /*, reverse */ 
-                
-                
-                
-                ,concurrent
-                
-                
-                });
+    console.log({
+        input,
+        dest /*, reverse */,
+
+        concurrent,
+    });
     start(input, dest /*, reverse*/);
 } else {
     console.error(helptxt);

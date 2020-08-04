@@ -1,18 +1,16 @@
-const fatalerror=["遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态 过期, 请尝试重新登录, 消息: user not exists"]
+const fatalerror = [
+    "遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败,",
+];
 
+const directfailure = [
+    "以下文件上传失败:",
 
-const directfailure
-=[ "以下文件上传失败:",  
-
-
-
- "全部上传完毕, 总大小: 0B","ms, 总大小: 0B",  "打开上传未完成数据库错误:",]
-
-
+    "全部上传完毕, 总大小: 0B",
+    "ms, 总大小: 0B",
+    "打开上传未完成数据库错误:",
+];
 
 const retrymsg = [
-  
-   
     "网络错误, http 响应错误,",
     "遇到错误, 远端服务器返回错误, 代码: 31352, 消息: commit superfile2 failed",
     "网络错误, Post",
@@ -21,7 +19,6 @@ const retrymsg = [
     "网络错误, Get",
     "上传文件错误: 上传状态过期, 请重新上传",
     "上传文件失败, 分片上传—合并分片文件",
- 
 ];
 const successmsg = [
     ", 已存在, 跳过...",
@@ -52,7 +49,7 @@ export async function upload(file: string, destination: string): Promise<void> {
             console.log("文件上传成功", file);
             return;
         } else {
-                              //如果。找不到 baidupcs-go的可执行文件，则。会在这里报错
+            //如果。找不到 baidupcs-go的可执行文件，则。会在这里报错
             throw error;
         }
     }
@@ -65,51 +62,15 @@ export async function upload(file: string, destination: string): Promise<void> {
         stderr,
     };
     console.log(JSON.stringify(记录日志, null, 4));
-                              
-                              
-                              
-                              
-                              
-                              
-                              
-                              
-                              //未登录的致命错误要失败
+
+    //未登录的致命错误要失败
     /* 判断是否上传成功与失败 */
-                              
-           if(
-                             
-                             fatalerror.some((m) => stdout.includes(m))
-                             
-                             ){
-                              
-                              
-                              
-                              
-                              throw new Error(
-        "exec command failure! baidupcs-go:" + "\n"+ stdout+"\n"+ stderr 
-                              
-    );
-                              }                   
-                              else if(directfailure.some((m) => stdout.includes(m))){
 
-console.warn(stdout, stderr);
-        console.warn("上传失败,5秒后重试:" + file);
-        return new Promise((res) => {
-            setTimeout(() => {
-                res(upload(file, destination));
-            }, 5000);
-        });
-
-
-
-}
-                              else
-    if (successmsg.some((m) => stdout.includes(m))) {
-        console.log("文件上传成功", file);
-        return;
-    }else
-
-    if (retrymsg.some((msg) => stdout.includes(msg))) {
+    if (fatalerror.some((m) => stdout.includes(m))) {
+        throw new Error(
+            "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
+        );
+    } else if (directfailure.some((m) => stdout.includes(m))) {
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
         return new Promise((res) => {
@@ -117,14 +78,20 @@ console.warn(stdout, stderr);
                 res(upload(file, destination));
             }, 5000);
         });
+    } else if (successmsg.some((m) => stdout.includes(m))) {
+        console.log("文件上传成功", file);
+        return;
+    } else if (retrymsg.some((msg) => stdout.includes(msg))) {
+        console.warn(stdout, stderr);
+        console.warn("上传失败,5秒后重试:" + file);
+        return new Promise((res) => {
+            setTimeout(() => {
+                res(upload(file, destination));
+            }, 5000);
+        });
+    } else {
+        throw new Error(
+            "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
+        );
     }
-else{
-    throw new Error(
-        "exec command failure! baidupcs-go:" + "\n"+ stdout+"\n"+ stderr 
-                              
-    );
-                              }
-                              
-                              
-                    
 }
