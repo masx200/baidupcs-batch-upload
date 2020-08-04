@@ -58,11 +58,37 @@ export async function upload(file: string, destination: string): Promise<void> {
         stderr,
     };
     console.log(JSON.stringify(记录日志, null, 4));
+                              
+                              
+                              
+                              
+                              
+                              
+                              
+                              
+                              //未登录的致命错误要失败
     /* 判断是否上传成功与失败 */
+                              
+           if(
+                             
+                             fatalerror.some((m) => stdout.includes(m))
+                             
+                             ){
+                              
+                              
+                              
+                              
+                              throw new Error(
+        "exec command failure! baidupcs-go:" + "\n"+ stdout+"\n"+ stderr 
+                              
+    );
+                              }                   
+                              
+                              else
     if (successmsg.some((m) => stdout.includes(m))) {
         console.log("文件上传成功", file);
         return;
-    }
+    }else
 
     if (retrymsg.some((msg) => stdout.includes(msg))) {
         console.warn(stdout, stderr);
@@ -73,9 +99,10 @@ export async function upload(file: string, destination: string): Promise<void> {
             }, 5000);
         });
     }
-
+else{
     throw new Error(
         "exec command failure! baidupcs-go:" + "\n"+ stdout+"\n"+ stderr 
                               
     );
+                              }
 }
