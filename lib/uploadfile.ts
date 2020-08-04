@@ -1,21 +1,27 @@
 const fatalerror=["遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态 过期, 请尝试重新登录, 消息: user not exists"]
 
 
+const directfailure
+=[ "以下文件上传失败:",  
+
+
+
+ "全部上传完毕, 总大小: 0B","ms, 总大小: 0B",  "打开上传未完成数据库错误:",]
 
 
 
 const retrymsg = [
-    "打开上传未完成数据库错误:",
-    "以下文件上传失败:",
+  
+   
     "网络错误, http 响应错误,",
-    `遇到错误, 远端服务器返回错误, 代码: 31352, 消息: commit superfile2 failed`,
-    `网络错误, Post`,
-    `json 数据解析失败,`,
+    "遇到错误, 远端服务器返回错误, 代码: 31352, 消息: commit superfile2 failed",
+    "网络错误, Post",
+    "json 数据解析失败,",
     "获取文件列表错误, 获取目录下的文件列表",
     "网络错误, Get",
-    `上传文件错误: 上传状态过期, 请重新上传`,
-    `上传文件失败, 分片上传—合并分片文件`,
-    "全部上传完毕, 总大小: 0B",
+    "上传文件错误: 上传状态过期, 请重新上传",
+    "上传文件失败, 分片上传—合并分片文件",
+ 
 ];
 const successmsg = [
     ", 已存在, 跳过...",
@@ -84,7 +90,19 @@ export async function upload(file: string, destination: string): Promise<void> {
                               
     );
                               }                   
-                              
+                              else if(directfailure.some((m) => stdout.includes(m))){
+
+console.warn(stdout, stderr);
+        console.warn("上传失败,5秒后重试:" + file);
+        return new Promise((res) => {
+            setTimeout(() => {
+                res(upload(file, destination));
+            }, 5000);
+        });
+
+
+
+}
                               else
     if (successmsg.some((m) => stdout.includes(m))) {
         console.log("文件上传成功", file);
@@ -106,4 +124,7 @@ else{
                               
     );
                               }
+                              
+                              
+                    
 }
