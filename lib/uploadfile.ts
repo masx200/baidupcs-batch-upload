@@ -75,6 +75,6 @@ export async function upload(file: string, destination: string): Promise<void> {
     }
 
     throw new Error(
-        "command failure! baidupcs-go:" + JSON.stringify({ stdout, stderr })
+        "command failure! baidupcs-go:" + "\n"+ stdout+"\n"+ stderr )
     );
 }
