@@ -43,8 +43,7 @@ export async function upload(file: string, destination: string): Promise<void> {
         console.error(error);
         console.error(JSON.stringify({ stdout, stderr }, null, 4));
         if (
-            
-            !directfailure.some((m) => stdout.includes(m))&&
+            !directfailure.some((m) => stdout.includes(m)) &&
             successerror.some((m) => stderr?.includes(m)) &&
             successmsg.some((m) => stdout?.includes(m))
         ) {
