@@ -88,10 +88,10 @@ async function start(
         
         
         
+        //https://github.com/felixonmars/BaiduPCS-Go/issues/20
         
         
-        
-        
+        //可以使用meta命令来判断文件是否存在
         
         
 }
