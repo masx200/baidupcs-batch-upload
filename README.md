@@ -20,6 +20,15 @@ https://github.com/masx200/baidupcs-batch-upload/releases/download/1.1.5/BaiduPC
 
 https://github.com/felixonmars/BaiduPCS-Go/releases/tag/v3.6.2
 
+
+
+
+https://github.com/masx200/baidupcs-batch-upload/releases/download/1.1.8/BaiduPCS-Go.arm64.android-v3.6.2-devel.rar
+
+
+
+
+
 # 使用方法
 
 安装
