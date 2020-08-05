@@ -79,6 +79,21 @@ async function start(
             }
         )
     );
+        
+        
+        
+        
+       //TODO  上传完大量文件之后会极少的一些文件返回信息上传成功，但实际上上传没有成功！ 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 }
 export { start };
 function resolvefiledestination(file: string, input: string, dest: string) {
