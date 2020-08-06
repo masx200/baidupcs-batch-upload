@@ -79,21 +79,12 @@ async function start(
             }
         )
     );
-        
-        
-        
-        
-       //TODO  上传完大量文件之后会极少的一些文件返回信息上传成功，但实际上上传没有成功！ 
-        
-        
-        
-        
-        //https://github.com/felixonmars/BaiduPCS-Go/issues/20
-        
-        
-        //可以使用meta命令来判断文件是否存在
-        
-        
+
+    //TODO  上传完大量文件之后会极少的一些文件返回信息上传成功，但实际上上传没有成功！
+
+    //https://github.com/felixonmars/BaiduPCS-Go/issues/20
+
+    //可以使用meta命令来判断文件是否存在
 }
 export { start };
 function resolvefiledestination(file: string, input: string, dest: string) {
