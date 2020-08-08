@@ -4,7 +4,7 @@ function checkmetamsg(stdout: string): boolean {
         ?.split(/\s+/)
         ?.filter(Boolean);
 
-    return infoarr[0] === "类型" && infoarr[1] === "文件";
+    return infoarr?.[0] === "类型" && infoarr?.[1] === "文件";
 }
 
 export async function checkexist(remotefile: string): Promise<boolean> {
