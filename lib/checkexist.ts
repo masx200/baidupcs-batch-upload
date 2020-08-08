@@ -45,7 +45,7 @@ throw new Error(
 times: 5,
             onFailedAttempt: async (e) => {
                 console.warn(e);
-                console.warn("网络错误，3秒后重试");
+                console.warn("运行错误，3秒后重试");
                 await sleep(3000);
             },
 })
