@@ -16,6 +16,7 @@
         "start": "node --experimental-modules --experimental-json-modules ./lib/cli.js "
     },
     "dependencies": {
+"@shanyue/promise-utils":"2.0.4",
         "@masx200/async-task-current-limiter": "^1.0.9",
         "find": "^0.3.0",
         "fs-extra": "^8.1.0"
