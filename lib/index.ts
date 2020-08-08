@@ -44,17 +44,30 @@ async function start(
     const filelist = filedatas.filter((file, index) => {
         return filesizes[index];
     });
-    // reverse ? filedatas.reverse() : filedatas;
+
     总数 = filelist.length;
-    /* const destlist = filelist.map((file) => {
-        const destination = posix.dirname(
-            posix
-                .resolve(dest, inputbase, path.relative(input, file))
-                .replace(/\\/g, "/")
-        );
-        return destination;
-    });
-*/
+
+    //TODO  上传完大量文件之后会极少的一些文件返回信息上传成功，但实际上上传没有成功！
+
+    //https://github.com/felixonmars/BaiduPCS-Go/issues/20
+
+    //可以使用meta命令来判断文件是否存在
+
+    await handleup(filelist, input, dest);
+    console.log("全部处理完成");
+}
+export { start };
+function resolvefiledestination(file: string, input: string, dest: string) {
+    const inputbase = path.basename(input);
+    const destination = posix.dirname(
+        posix
+            .resolve(dest, inputbase, path.relative(input, file))
+            .replace(/\\/g, "/")
+    );
+    return destination;
+}
+
+async function handleup(filelist: string[], input: string, dest: string) {
     await Promise.all(
         filelist.map(
             /**
@@ -79,20 +92,4 @@ async function start(
             }
         )
     );
-
-    //TODO  上传完大量文件之后会极少的一些文件返回信息上传成功，但实际上上传没有成功！
-
-    //https://github.com/felixonmars/BaiduPCS-Go/issues/20
-
-    //可以使用meta命令来判断文件是否存在
-}
-export { start };
-function resolvefiledestination(file: string, input: string, dest: string) {
-    const inputbase = path.basename(input);
-    const destination = posix.dirname(
-        posix
-            .resolve(dest, inputbase, path.relative(input, file))
-            .replace(/\\/g, "/")
-    );
-    return destination;
 }

@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@masx200/async-task-current-limiter@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.npm.taobao.org/@masx200/async-task-current-limiter/download/@masx200/async-task-current-limiter-1.0.8.tgz#cb23867600889c470f1806c9ec6cb60c3505f5ef"
-  integrity sha1-yyOGdgCInEcPGAbJ7Gy2DDUF9e8=
+"@masx200/async-task-current-limiter@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@masx200/async-task-current-limiter/-/async-task-current-limiter-1.0.9.tgz#23ca138e4cf6b5dbc30844475394ae3154a951dc"
+  integrity sha512-+JSTzadMW49wbzRIPzJS5BzEypt5Hy8CIbatYwpk1Gp8AbGxvwKoj1XgA//P2bEEodmFZGVCpgb3eXJl9SOVfA==
   dependencies:
     "@masx200/event-emitter-target" "^1.1.7"
 
