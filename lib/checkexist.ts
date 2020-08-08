@@ -1,9 +1,24 @@
-export async function checkexist(remotefile:string){
-const  result = await retry(
-        () => {
+export async function checkexist(remotefile:string):boolean{
+const  fileexist = await retry(
+       async () => {
 
-execmeta(remotefile)
+const  result =execmeta(remotefile)
 
+
+const { stdout, stderr } = result
+
+const 记录日志={
+
+remotefile,
+stdout, stderr
+}
+console.log(JSON.stringify(记录日志,null,4))
+
+
+
+
+
+//todo
 },{
 
 
@@ -14,14 +29,7 @@ times: 5,
                 await sleep(3000);
             },
 })
-    const { stdout, stderr } = result
-
-const 记录日志={
-
-remotefile,
-stdout, stderr
-}
-console.log(JSON.stringify(记录日志,null,4))
+   return  fileexist
 }
 
 
