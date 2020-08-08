@@ -75,7 +75,7 @@ export async function upload(file: string, destination: string): Promise<void> {
     } else if (directfailure.some((m) => stdout.includes(m))) {
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
-        await retryupload(file, destination);
+       return  await retryupload(file, destination);
     } else if (successmsg.some((m) => stdout.includes(m))) {
         console.log("文件上传成功", file);
         return;
@@ -83,7 +83,7 @@ export async function upload(file: string, destination: string): Promise<void> {
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
 
-        await retryupload(file, destination);
+    return    await retryupload(file, destination);
     } else {
         throw new Error(
             "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
@@ -93,7 +93,29 @@ export async function upload(file: string, destination: string): Promise<void> {
 async function retryupload(file: string, destination: string): Promise<void> {
     return new Promise((res) => {
         setTimeout(() => {
-            res(upload(file, destination));
+            res(uploadandcheck(file, destination));
         }, 5000);
     });
+}
+import {checkexist}from "./checkexist.js"
+import path, { posix } from "path"
+
+export async function uploadandcheck(file: string, destination: string): Promise<void> {
+
+await upload(file, destination)
+
+const inputbase = path.basename(file);
+const remotefile=posix.join(destination,inputbase)
+const fileexist=await checkexist(remotefile)
+if(fileexist){
+
+console.log("网盘中存在此文件，上传文件成功："+file+" "+remotefile)
+return
+
+}else{
+console.warn("网盘中不存在此文件，重新上传文件："+file+" "+remotefile)
+ return await retryupload(file, destination);
+
+}
+
 }
