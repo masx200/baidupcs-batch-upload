@@ -6,7 +6,7 @@ import fs from "fs";
 import path, { posix } from "path";
 import process from "process";
 import findfile from "./findfiles.js";
-import { upload } from "./uploadfile.js";
+import { uploadandcheck} from "./uploadfile.js";
 import os from "os";
 export const cmd =
     "win32" === os.platform() ? "BaiduPCS-Go.exe" : "BaiduPCS-Go";
@@ -92,7 +92,7 @@ async function handleup(filelist: string[], input: string, dest: string) {
                         dest
                     );
 
-                    await upload(file, destination);
+                    await uploadandcheck(file, destination);
                     完成数++;
                     const 进度 = "完成进度:" + `${完成数} / ${总数}`;
                     console.log(进度);
