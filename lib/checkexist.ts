@@ -18,7 +18,16 @@ stdout, stderr
 }
 console.log(JSON.stringify(记录日志,null,4))
 
+if(stdout.includes(notexistmsg)){
+return false
 
+}else if(){}else{
+
+throw new Error(
+            "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
+        );
+
+}
 
 
 
