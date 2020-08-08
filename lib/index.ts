@@ -67,35 +67,37 @@ function resolvefiledestination(file: string, input: string, dest: string) {
 }
 
 async function handleup(filelist: string[], input: string, dest: string) {
-	const files=filelist
-	if (!files.length) {
+    const files = filelist;
+    if (!files.length) {
         return;
-        }
-        else if (files.length > slicecount) {
+    } else if (files.length > slicecount) {
         const workfiles = files.slice(0, slicecount);
         const restfiles = files.slice(slicecount);
-        await handleup(workfiles, input, dest)
-        await handleup(restfiles , input, dest)
-        return
-}
-else {
-    await Promise.all(
-        filelist.map(
-            /**
-             * @param {string} file
-             */
-            async (file, index) => {
-                // 给上传目标文件夹添加了输入文件夹的名字
-                /*
+        await handleup(workfiles, input, dest);
+        await handleup(restfiles, input, dest);
+        return;
+    } else {
+        await Promise.all(
+            filelist.map(
+                /**
+                 * @param {string} file
                  */
-                const destination = resolvefiledestination(file, input, dest);
+                async (file, index) => {
+                    // 给上传目标文件夹添加了输入文件夹的名字
+                    /*
+                     */
+                    const destination = resolvefiledestination(
+                        file,
+                        input,
+                        dest
+                    );
 
-                await upload(file, destination);
-                完成数++;
-                const 进度 = "完成进度:" + `${完成数} / ${总数}`;
-                console.log(进度);
-            }
-        )
-    );
-}
+                    await upload(file, destination);
+                    完成数++;
+                    const 进度 = "完成进度:" + `${完成数} / ${总数}`;
+                    console.log(进度);
+                }
+            )
+        );
+    }
 }
