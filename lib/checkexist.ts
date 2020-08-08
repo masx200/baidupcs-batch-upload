@@ -1,3 +1,7 @@
+
+
+
+
 export async function checkexist(remotefile:string):boolean{
 const  fileexist = await retry(
        async () => {
@@ -36,3 +40,4 @@ times: 5,
 import execmeta from "./execmeta.js"
 import pupkg from "@shanyue/promise-utils";
 const { retry, sleep } = pupkg;
+const notexistmsg="遇到错误, 远端服务器返回错误, 代码: 31066, 消息: 文件或目录不存在"
