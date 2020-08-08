@@ -1,7 +1,6 @@
 /// <reference types="node" />
-export default function execup(
-    localfile: string,
-    desdir: string
+export default function execmeta(
+    remotefile: string
 ): import("child_process").PromiseWithChild<{
     stdout: string;
     stderr: string;
