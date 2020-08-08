@@ -1,5 +1,7 @@
 
-
+function  checkmetamsg(stdout:string){
+return  /类型\s+文件\s+/.test(stdout.split("--------------")?.[1])
+}
 
 
 export async function checkexist(remotefile:string):boolean{
@@ -21,7 +23,12 @@ console.log(JSON.stringify(记录日志,null,4))
 if(stdout.includes(notexistmsg)){
 return false
 
-}else if(){}else{
+}else if(checkmetamsg(stdout)){
+
+
+return true
+
+}else{
 
 throw new Error(
             "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
