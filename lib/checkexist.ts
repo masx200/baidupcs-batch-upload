@@ -1,6 +1,13 @@
 
 function  checkmetamsg(stdout:string){
-return  /类型\s+文件\s+/.test(stdout.split("--------------")?.[1])
+
+
+
+
+const infoarr=(stdout.split("--------------")?.[1]).split(/\s+/).filter(Boolean)
+
+
+return  infoarr[0]==="类型" &&infoarr[1]==="文件"
 }
 
 
