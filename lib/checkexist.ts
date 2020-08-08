@@ -2,7 +2,7 @@ export async function checkexist(remotefile:string):boolean{
 const  fileexist = await retry(
        async () => {
 
-const  result =execmeta(remotefile)
+const  result =await execmeta(remotefile)
 
 
 const { stdout, stderr } = result
