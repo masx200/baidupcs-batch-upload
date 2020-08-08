@@ -1,3 +1,5 @@
+const slicecount = 500;
+
 // const input = `D:/baidupandownload/微博美图相册-2020-02-13`;
 // const dest = `/!我的图片-2020-02-10/微博美图相册-2020-02-13`;
 import fs from "fs";
@@ -15,12 +17,9 @@ let 总数 = 0;
 let 完成数 = 0;
 
 /**
- * 
- * 
+
  *@param {string} input
  *@param {string} dest
- * 
-
  *  */
 
 async function start(
@@ -68,6 +67,18 @@ function resolvefiledestination(file: string, input: string, dest: string) {
 }
 
 async function handleup(filelist: string[], input: string, dest: string) {
+	const files=filelist
+	if (!files.length) {
+        return;
+        }
+        else if (files.length > slicecount) {
+        const workfiles = files.slice(0, slicecount);
+        const restfiles = files.slice(slicecount);
+        await handleup(workfiles, input, dest)
+        await handleup(restfiles , input, dest)
+        return
+}
+else {
     await Promise.all(
         filelist.map(
             /**
@@ -78,13 +89,7 @@ async function handleup(filelist: string[], input: string, dest: string) {
                 /*
                  */
                 const destination = resolvefiledestination(file, input, dest);
-                //destlist[index];
 
-                /*posix.dirname(
-                posix
-                    .resolve(dest, inputbase, path.relative(input, file))
-                    .replace(/\\/g, "/")
-            );*/
                 await upload(file, destination);
                 完成数++;
                 const 进度 = "完成进度:" + `${完成数} / ${总数}`;
@@ -92,4 +97,5 @@ async function handleup(filelist: string[], input: string, dest: string) {
             }
         )
     );
+}
 }
