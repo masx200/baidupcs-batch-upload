@@ -1,7 +1,7 @@
 const fatalerror = [
-    "遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败,",
+    "遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态过期",
 ];
-//遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态 过期, 请尝试重新登录, 消息: user not exists
+//遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态过期, 请尝试重新登录, 消息: user not exists
 
 const directfailure = [
     "以下文件上传失败:",
@@ -57,14 +57,14 @@ export async function upload(file: string, destination: string): Promise<void> {
     }
 
     const { stdout, stderr } = result;
-    const 记录日志 = {
+  /*  const 记录日志 = {
         localfile,
         desdir,
         stdout,
         stderr,
     };
     console.log(JSON.stringify(记录日志, null, 4));
-
+*/
     //未登录的致命错误要失败
     /* 判断是否上传成功与失败 */
 
