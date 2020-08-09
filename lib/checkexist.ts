@@ -14,13 +14,13 @@ export async function checkexist(remotefile: string): Promise<boolean> {
 
             const { stdout, stderr } = result;
 
-            const 记录日志 = {
+           /* const 记录日志 = {
                 remotefile,
                 stdout,
                 stderr,
             };
             console.log(JSON.stringify(记录日志, null, 4));
-
+*/
             if (stdout.includes(notexistmsg)) {
                 return false;
             } else if (checkmetamsg(stdout)) {
