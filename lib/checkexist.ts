@@ -41,7 +41,7 @@ export async function checkexist(remotefile: string): Promise<boolean> {
             times: 5,
             onFailedAttempt: async (e) => {
                 console.warn(e);
-                console.warn("运行错误，3秒后重试");
+                console.warn("运行命令查询错误，3秒后重试");
                 await sleep(3000);
             },
         }
