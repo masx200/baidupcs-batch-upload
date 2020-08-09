@@ -43,12 +43,15 @@ export async function upload(file: string, destination: string): Promise<void> {
         const { stdout, stderr } = error;
         console.error(error);
         console.error(JSON.stringify({ stdout, stderr }, null, 4));
-        if (
+        if(typeof stdout!=="string"  ||typeof stderr!=="string"){
+throw error;
+}
+else if (
             !directfailure.some((m) => stdout.includes(m)) &&
             successerror.some((m) => stderr?.includes(m)) &&
             successmsg.some((m) => stdout?.includes(m))
         ) {
-            console.log("文件上传成功", file);
+            console.log("文件上传成功", file,destination);
             return;
         } else {
             //如果。找不到 baidupcs-go的可执行文件，则。会在这里报错
@@ -77,7 +80,7 @@ export async function upload(file: string, destination: string): Promise<void> {
         console.warn("上传失败,5秒后重试:" + file);
         return await retryupload(file, destination);
     } else if (successmsg.some((m) => stdout.includes(m))) {
-        console.log("文件上传成功", file);
+        console.log("文件上传成功", file,destination);
         return;
     } else if (retrymsg.some((msg) => stdout.includes(msg))) {
         console.warn(stdout, stderr);
@@ -111,12 +114,12 @@ export async function uploadandcheck(
     const fileexist = await checkexist(remotefile);
     if (fileexist) {
         console.log(
-            "网盘中存在此文件，上传文件成功：" + file + " " + remotefile
+            "检查网盘中存在此文件，上传文件成功：" + file + " " + remotefile
         );
         return;
     } else {
         console.warn(
-            "网盘中不存在此文件，重新上传文件：" + file + " " + remotefile
+            "检查网盘中不存在此文件，重新上传文件：" + file + " " + remotefile
         );
         return await retryupload(file, destination);
     }
