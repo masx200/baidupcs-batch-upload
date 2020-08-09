@@ -10,7 +10,6 @@ https://github.com/iikira/BaiduPCS-Go
 
 如果遇到 几 种网络问题上传失败,则自动重试，比直接用 一个 `BaiduPCS-Go` 命令上传更快
 
-
 解决了上传文件有小概率上传未成功，但`baidupcs-go`返回上传成功的问题，
 
 解决思路：使用`upload`上传完文件之后，使用`meta`命令，检查文件是否存在于网盘中，然后重传失败的文件
