@@ -14,7 +14,7 @@ export async function checkexist(remotefile: string): Promise<boolean> {
 
             const { stdout, stderr } = result;
 
-           /* const 记录日志 = {
+            /* const 记录日志 = {
                 remotefile,
                 stdout,
                 stderr,

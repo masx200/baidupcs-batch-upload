@@ -34,8 +34,8 @@ const successerror = ["panic: runtime error: index out of range"];
  * @param {string} destination
  */
 export async function upload(file: string, destination: string): Promise<void> {
-    const localfile = file;
-    const desdir = destination;
+    // const localfile = file;
+    //  const desdir = destination;
     let result = { stdout: "", stderr: "" };
     try {
         result = await baidupcsupload(file, destination);
@@ -43,15 +43,14 @@ export async function upload(file: string, destination: string): Promise<void> {
         const { stdout, stderr } = error;
         console.error(error);
         console.error(JSON.stringify({ stdout, stderr }, null, 4));
-        if(typeof stdout!=="string"  ||typeof stderr!=="string"){
-throw error;
-}
-else if (
+        if (typeof stdout !== "string" || typeof stderr !== "string") {
+            throw error;
+        } else if (
             !directfailure.some((m) => stdout.includes(m)) &&
             successerror.some((m) => stderr?.includes(m)) &&
             successmsg.some((m) => stdout?.includes(m))
         ) {
-            console.log("文件上传成功", file,destination);
+            console.log("文件上传成功", file, destination);
             return;
         } else {
             //如果。找不到 baidupcs-go的可执行文件，则。会在这里报错
@@ -60,7 +59,7 @@ else if (
     }
 
     const { stdout, stderr } = result;
-  /*  const 记录日志 = {
+    /*  const 记录日志 = {
         localfile,
         desdir,
         stdout,
@@ -80,7 +79,7 @@ else if (
         console.warn("上传失败,5秒后重试:" + file);
         return await retryupload(file, destination);
     } else if (successmsg.some((m) => stdout.includes(m))) {
-        console.log("文件上传成功", file,destination);
+        console.log("文件上传成功", file, destination);
         return;
     } else if (retrymsg.some((msg) => stdout.includes(msg))) {
         console.warn(stdout, stderr);
