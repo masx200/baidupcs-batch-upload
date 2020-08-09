@@ -35,7 +35,10 @@ https://github.com/masx200/baidupcs-batch-upload/releases/download/1.1.8/BaiduPC
 ```shell
 npm i -g @masx200/baidupcs-batch-upload
 ```
-
+或者
+```shell
+yarn global add @masx200/baidupcs-batch-upload
+```
 ## 安装 `node_modules`
 
 ```shell
