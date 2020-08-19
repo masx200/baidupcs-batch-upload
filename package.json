@@ -10,7 +10,7 @@
     "module": "./lib/index.js",
     "type": "module",
     "scripts": {
-        "watch": "tsc --watch",
+        
         "build": "tsc",
         "prettier": "prettier **/*.ts **/*.js --write *.json *.md",
         "start": "node --experimental-modules --experimental-json-modules ./lib/cli.js "

@@ -29,9 +29,9 @@ async function start(
     /*, reverse = false*/
 ) {
     const filedatas = await findfile(path.resolve(input));
-   //文件排序一下
-filedatas.sort()
- // 总数 = filedatas.length;
+    //文件排序一下
+    filedatas.sort();
+    // 总数 = filedatas.length;
     console.log("找到文件" + filedatas.length + "个");
     console.log(JSON.stringify(filedatas, null, 4));
 
