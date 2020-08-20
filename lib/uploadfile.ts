@@ -1,11 +1,9 @@
 const fatalerror = [
-
-"遇到错误, 远端服务器返回错误, 代码: 31062, 消息: file name is invalid"
-,
+    "遇到错误, 远端服务器返回错误, 代码: 31062, 消息: file name is invalid",
     "遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态过期",
 ];
 //遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态过期, 请尝试重新登录, 消息: user not exists
-export {  fatalerror  }
+export { fatalerror };
 const directfailure = [
     "以下文件上传失败:",
 
@@ -108,13 +106,16 @@ Error: Command failed: BaiduPCS-Go.exe upload D:\baidupandownload\微博美图�
     /* 判断是否上传成功与失败 */
 
     if (fatalerror.some((m) => stdout.includes(m))) {
-throw Object.assign(new Error(
-                    "exec command failure! baidupcs-go:" +
-                        "\n" +
-                        stdout +
-                        "\n" +
-                        stderr
-                ),{ stdout, stderr });
+        throw Object.assign(
+            new Error(
+                "exec command failure! baidupcs-go:" +
+                    "\n" +
+                    stdout +
+                    "\n" +
+                    stderr
+            ),
+            { stdout, stderr }
+        );
         /*throw new Error(
             "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
         );*/
@@ -134,13 +135,16 @@ throw Object.assign(new Error(
         /*throw new Error(
             "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
         );*/
-throw Object.assign(new Error(
-                    "exec command failure! baidupcs-go:" +
-                        "\n" +
-                        stdout +
-                        "\n" +
-                        stderr
-                ),{ stdout, stderr });
+        throw Object.assign(
+            new Error(
+                "exec command failure! baidupcs-go:" +
+                    "\n" +
+                    stdout +
+                    "\n" +
+                    stderr
+            ),
+            { stdout, stderr }
+        );
     }
 }
 async function retryupload(file: string, destination: string): Promise<void> {

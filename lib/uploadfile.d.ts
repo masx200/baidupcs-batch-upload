@@ -1,3 +1,5 @@
+declare const fatalerror: string[];
+export { fatalerror };
 export declare function upload(
     file: string,
     destination: string

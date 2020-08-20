@@ -1,4 +1,4 @@
-import {fatalerror}from "./uploadfile.js"
+import { fatalerror } from "./uploadfile.js";
 
 function checkmetamsg(stdout: string): boolean {
     const infoarr = stdout
@@ -28,13 +28,16 @@ export async function checkexist(remotefile: string): Promise<boolean> {
             } else if (checkmetamsg(stdout)) {
                 return true;
             } else {
-                throw Object.assign(new Error(
-                    "exec command failure! baidupcs-go:" +
-                        "\n" +
-                        stdout +
-                        "\n" +
-                        stderr
-                ),{ stdout, stderr });
+                throw Object.assign(
+                    new Error(
+                        "exec command failure! baidupcs-go:" +
+                            "\n" +
+                            stdout +
+                            "\n" +
+                            stderr
+                    ),
+                    { stdout, stderr }
+                );
             }
 
             //todo
@@ -44,10 +47,15 @@ export async function checkexist(remotefile: string): Promise<boolean> {
             onFailedAttempt: async (e) => {
                 console.warn(e);
 
+                const stdout =
+                    Reflect.has(e, "stdout") && Reflect.get(e, "stdout");
 
-
-if(fatalerror.some((m) => stdout.includes(m))){throw e}
-
+                if (typeof stdout !== "string") {
+                    throw e;
+                }
+                if (fatalerror.some((m) => stdout.includes(m))) {
+                    throw e;
+                }
 
                 console.warn("运行命令查询错误，4秒后重试");
                 await sleep(4000);
