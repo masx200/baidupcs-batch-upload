@@ -38,11 +38,11 @@ export async function checkexist(remotefile: string): Promise<boolean> {
             //todo
         },
         {
-            times: 5,
+            times: 15,
             onFailedAttempt: async (e) => {
                 console.warn(e);
-                console.warn("运行命令查询错误，3秒后重试");
-                await sleep(3000);
+                console.warn("运行命令查询错误，4秒后重试");
+                await sleep(4000);
             },
         }
     );
