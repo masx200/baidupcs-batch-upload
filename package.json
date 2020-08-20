@@ -32,7 +32,7 @@
     },
     "keywords": [],
     "author": "masx200 <34191203+masx200@users.noreply.github.com>",
-    "description": "使用baidupcs-go,百度网盘批量上传图片",
+    "description": "使用baidupcs-go,百度网盘批量上传文件夹中的文件",
     "repository": "git+https://github.com/masx200/baidupcs-batch-upload.git",
     "bugs": {
         "url": "https://github.com/masx200/baidupcs-batch-upload/issues"
