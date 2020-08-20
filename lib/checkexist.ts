@@ -1,3 +1,5 @@
+import {fatalerror}from "./uploadfile.js"
+
 function checkmetamsg(stdout: string): boolean {
     const infoarr = stdout
         .split("--------------")?.[1]
@@ -41,6 +43,12 @@ export async function checkexist(remotefile: string): Promise<boolean> {
             times: 15,
             onFailedAttempt: async (e) => {
                 console.warn(e);
+
+
+
+if(fatalerror.some((m) => stdout.includes(m))){throw e}
+
+
                 console.warn("运行命令查询错误，4秒后重试");
                 await sleep(4000);
             },
