@@ -26,13 +26,13 @@ export async function checkexist(remotefile: string): Promise<boolean> {
             } else if (checkmetamsg(stdout)) {
                 return true;
             } else {
-                throw new Error(
+                throw Object.assign(new Error(
                     "exec command failure! baidupcs-go:" +
                         "\n" +
                         stdout +
                         "\n" +
                         stderr
-                );
+                ),{ stdout, stderr });
             }
 
             //todo
