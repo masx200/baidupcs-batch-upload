@@ -108,9 +108,16 @@ Error: Command failed: BaiduPCS-Go.exe upload D:\baidupandownload\微博美图�
     /* 判断是否上传成功与失败 */
 
     if (fatalerror.some((m) => stdout.includes(m))) {
-        throw new Error(
+throw Object.assign(new Error(
+                    "exec command failure! baidupcs-go:" +
+                        "\n" +
+                        stdout +
+                        "\n" +
+                        stderr
+                ),{ stdout, stderr });
+        /*throw new Error(
             "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
-        );
+        );*/
     } else if (directfailure.some((m) => stdout.includes(m))) {
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
@@ -124,9 +131,16 @@ Error: Command failed: BaiduPCS-Go.exe upload D:\baidupandownload\微博美图�
 
         return await retryupload(file, destination);
     } else {
-        throw new Error(
+        /*throw new Error(
             "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
-        );
+        );*/
+throw Object.assign(new Error(
+                    "exec command failure! baidupcs-go:" +
+                        "\n" +
+                        stdout +
+                        "\n" +
+                        stderr
+                ),{ stdout, stderr });
     }
 }
 async function retryupload(file: string, destination: string): Promise<void> {
