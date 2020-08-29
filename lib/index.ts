@@ -96,9 +96,12 @@ async function handleup(filelist: string[], input: string, dest: string) {
 
                     await uploadandcheck(file, destination);
                     完成数++;
-                    const 进度 = "完成进度:" +`${完成数/总数*100} % `+ `${完成数} / ${总数}`;
+                    const 进度 =
+                        "完成进度:" +
+                        `${(完成数 / 总数) * 100} % ` +
+                        `${完成数} / ${总数}`;
                     console.log(进度);
-                    process.title=进度
+                    process.title = 进度;
                 }
             )
         );
