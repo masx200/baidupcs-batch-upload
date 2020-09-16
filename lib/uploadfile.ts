@@ -1,6 +1,7 @@
 const fatalerror = [
     "遇到错误, 远端服务器返回错误, 代码: 31062, 消息: file name is invalid",
     "遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态过期",
+    "网络错误, http 响应错误, 403 Forbidden",
 ];
 //遇到错误, 远端服务器返回错误, 代码: 31045, 消息: 操作失败, 可能百度帐号登录状态过期, 请尝试重新登录, 消息: user not exists
 export { fatalerror };
