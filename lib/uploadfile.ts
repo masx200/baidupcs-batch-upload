@@ -46,20 +46,19 @@ const successerror = ["panic: runtime error: index out of range"];
 export async function upload(file: string, destination: string): Promise<void> {
     // const localfile = file;
     //  const desdir = destination;
-const starttime=Date.now()
+    const starttime = Date.now();
 
     let result = { stdout: "", stderr: "" };
-function done(){
-const endtime=Date.now()
-const durtime=(endtime-starttime)/1000
+    function done() {
+        const endtime = Date.now();
+        const durtime = (endtime - starttime) / 1000;
 
+        console.log(["初步文件上传成功", file, destination].join("\n"));
 
-            console.log(["初步文件上传成功", file, destination,].join("\n"));
+        console.log("用时" + durtime + "秒");
 
-console.log("用时"+durtime+"秒")            
-
-return
-}
+        return;
+    }
     try {
         result = await baidupcsupload(file, destination);
     } catch (error) {
@@ -99,7 +98,7 @@ Error: Command failed: BaiduPCS-Go.exe upload D:\baidupandownload\微博美图�
             successerror.some((m) => stderr?.includes(m)) &&
             successmsg.some((m) => stdout?.includes(m))
         ) {
-/*
+            /*
 const endtime=Date.now()
 const durtime=(endtime-starttime)/1000
 
@@ -108,8 +107,8 @@ const durtime=(endtime-starttime)/1000
 
 console.log("用时"+durtime+"秒")            
 */
-done()
-return;
+            done();
+            return;
         } else {
             //如果。找不到 baidupcs-go的可执行文件，则。会在这里报错
             throw error;
@@ -147,10 +146,10 @@ return;
         console.warn("上传失败,5秒后重试:" + file);
         return await retryupload(file, destination);
     } else if (successmsg.some((m) => stdout.includes(m))) {
-       // console.log("初步文件上传成功", file, destination);
-      
-done()
-  return;
+        // console.log("初步文件上传成功", file, destination);
+
+        done();
+        return;
     } else if (retrymsg.some((msg) => stdout.includes(msg))) {
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
@@ -190,19 +189,23 @@ export async function uploadandcheck(
 
     const inputbase = path.basename(file);
     const remotefile = posix.join(destination, inputbase);
-const starttime=Date.now()   
- const fileexist = await checkexist(remotefile);
+    const starttime = Date.now();
+    const fileexist = await checkexist(remotefile);
     if (fileexist) {
         console.log(
-            ["检查网盘中存在此文件，上传文件成功：" , file ,  remotefile].join("\n")
+            ["检查网盘中存在此文件，上传文件成功：", file, remotefile].join(
+                "\n"
+            )
         );
-const endtime=Date.now()
-const durtime=(endtime-starttime)/1000
-console.log("用时"+durtime+"秒")
+        const endtime = Date.now();
+        const durtime = (endtime - starttime) / 1000;
+        console.log("用时" + durtime + "秒");
         return;
     } else {
         console.warn(
-            ["检查网盘中不存在此文件，重新上传文件：" , file , remotefile].join("\n")
+            ["检查网盘中不存在此文件，重新上传文件：", file, remotefile].join(
+                "\n"
+            )
         );
         return await retryupload(file, destination);
     }
