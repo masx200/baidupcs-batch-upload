@@ -46,7 +46,20 @@ const successerror = ["panic: runtime error: index out of range"];
 export async function upload(file: string, destination: string): Promise<void> {
     // const localfile = file;
     //  const desdir = destination;
+const starttime=Date.now()
+
     let result = { stdout: "", stderr: "" };
+function done(){
+const endtime=Date.now()
+const durtime=(endtime-starttime)/1000
+
+
+            console.log(["初步文件上传成功", file, destination,].join("\n"));
+
+console.log("用时"+durtime+"秒")            
+
+return
+}
     try {
         result = await baidupcsupload(file, destination);
     } catch (error) {
@@ -86,8 +99,17 @@ Error: Command failed: BaiduPCS-Go.exe upload D:\baidupandownload\微博美图�
             successerror.some((m) => stderr?.includes(m)) &&
             successmsg.some((m) => stdout?.includes(m))
         ) {
-            console.log("初步文件上传成功", file, destination);
-            return;
+/*
+const endtime=Date.now()
+const durtime=(endtime-starttime)/1000
+
+
+            console.log(["初步文件上传成功", file, destination,].join("\n"));
+
+console.log("用时"+durtime+"秒")            
+*/
+done()
+return;
         } else {
             //如果。找不到 baidupcs-go的可执行文件，则。会在这里报错
             throw error;
@@ -125,8 +147,10 @@ Error: Command failed: BaiduPCS-Go.exe upload D:\baidupandownload\微博美图�
         console.warn("上传失败,5秒后重试:" + file);
         return await retryupload(file, destination);
     } else if (successmsg.some((m) => stdout.includes(m))) {
-        console.log("初步文件上传成功", file, destination);
-        return;
+       // console.log("初步文件上传成功", file, destination);
+      
+done()
+  return;
     } else if (retrymsg.some((msg) => stdout.includes(msg))) {
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
