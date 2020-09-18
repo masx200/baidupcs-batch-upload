@@ -190,15 +190,19 @@ export async function uploadandcheck(
 
     const inputbase = path.basename(file);
     const remotefile = posix.join(destination, inputbase);
-    const fileexist = await checkexist(remotefile);
+const starttime=Date.now()   
+ const fileexist = await checkexist(remotefile);
     if (fileexist) {
         console.log(
-            "检查网盘中存在此文件，上传文件成功：" + file + " " + remotefile
+            ["检查网盘中存在此文件，上传文件成功：" , file ,  remotefile].join("\n")
         );
+const endtime=Date.now()
+const durtime=(endtime-starttime)/1000
+console.log("用时"+durtime+"秒")
         return;
     } else {
         console.warn(
-            "检查网盘中不存在此文件，重新上传文件：" + file + " " + remotefile
+            ["检查网盘中不存在此文件，重新上传文件：" , file , remotefile].join("\n")
         );
         return await retryupload(file, destination);
     }
