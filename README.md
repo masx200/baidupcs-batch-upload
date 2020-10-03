@@ -66,6 +66,12 @@ yarn start
 BaiduPCS-Go login
 ```
 
+# 获取 bduss 的方法
+
+http://tool.cccyun.cc/tool/bduss/index3.html
+
+https://bduss.lingtings.com/index3.html
+
 # 命令行示例
 
 必选参数 `input`:类型`string`,输入本地文件目录
