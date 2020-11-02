@@ -16,6 +16,23 @@ export async function checkexist(remotefile: string): Promise<boolean> {
 
             const { stdout, stderr } = result;
 
+            //偶尔会发生奇怪的错误
+            if (stdout === "" && stderr === "") {
+                const e = Object.assign(
+                    new Error(
+                        "exec command failure! baidupcs-go:" +
+                            "\n" +
+                            stdout +
+                            "\n" +
+                            stderr
+                    ),
+                    { stdout, stderr }
+                );
+                console.error(e);
+                console.warn("运行命令查询错误，5秒后重试");
+                await sleep(5000);
+                return await checkexist(remotefile);
+            }
             /* const 记录日志 = {
                 remotefile,
                 stdout,

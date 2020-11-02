@@ -142,6 +142,17 @@ console.log("用时"+durtime+"秒")
             "exec command failure! baidupcs-go:" + "\n" + stdout + "\n" + stderr
         );*/
     } else if (directfailure.some((m) => stdout.includes(m))) {
+        const e = Object.assign(
+            new Error(
+                "exec command failure! baidupcs-go:" +
+                    "\n" +
+                    stdout +
+                    "\n" +
+                    stderr
+            ),
+            { stdout, stderr }
+        );
+        console.error(e);
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
         return await retryupload(file, destination);
@@ -151,6 +162,17 @@ console.log("用时"+durtime+"秒")
         done();
         return;
     } else if (retrymsg.some((msg) => stdout.includes(msg))) {
+        const e = Object.assign(
+            new Error(
+                "exec command failure! baidupcs-go:" +
+                    "\n" +
+                    stdout +
+                    "\n" +
+                    stderr
+            ),
+            { stdout, stderr }
+        );
+        console.error(e);
         console.warn(stdout, stderr);
         console.warn("上传失败,5秒后重试:" + file);
 
