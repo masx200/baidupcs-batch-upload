@@ -3,8 +3,21 @@ export function checkmetamsg(stdout: string): boolean {
         .split("--------------")?.[1]
         ?.split(/\s+/)
         ?.filter(Boolean);
+    if (!infoarr) {
+        return false;
+    }
 
-    return infoarr?.[0] === "类型" && infoarr?.[1] === "文件";
+    if (infoarr?.indexOf("文件大小") < 0) {
+        return false;
+    }
+    const sizenotzero = !infoarr?.[infoarr.indexOf("文件大小") + 1]?.startsWith(
+        "0"
+    );
+    return !!(
+        infoarr?.[0] === "类型" &&
+        infoarr?.[1] === "文件" &&
+        sizenotzero
+    );
 }
 /*
 [
