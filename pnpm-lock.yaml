@@ -1,134 +1,192 @@
 dependencies:
-  '@masx200/async-task-current-limiter': 1.0.9
-  '@shanyue/promise-utils': 2.0.4
-  find: 0.3.0
-  fs-extra: 9.0.1
+  '@masx200/async-task-current-limiter': registry.npmjs.org/@masx200/async-task-current-limiter/1.0.9
+  '@shanyue/promise-utils': registry.npmjs.org/@shanyue/promise-utils/2.0.4
+  find: registry.npmjs.org/find/0.3.0
+  fs-extra: registry.npmjs.org/fs-extra/9.0.1
 devDependencies:
-  '@types/find': 0.2.1
-  '@types/fs-extra': 9.0.1
-  '@types/node': 14.10.2
-  prettier: 2.1.2
-  tslib: 2.0.1
-  typescript: 4.0.2
-lockfileVersion: 5.1
+  '@types/find': registry.npmjs.org/@types/find/0.2.1
+  '@types/fs-extra': registry.npmjs.org/@types/fs-extra/9.0.2
+  '@types/node': registry.npmjs.org/@types/node/14.14.6
+  prettier: registry.npmjs.org/prettier/2.1.2
+  tslib: registry.npmjs.org/tslib/2.0.3
+  typescript: registry.npmjs.org/typescript/4.0.5
+lockfileVersion: 5.2
 packages:
-  /@masx200/async-task-current-limiter/1.0.9:
+  registry.npmjs.org/@masx200/async-task-current-limiter/1.0.9:
     dependencies:
-      '@masx200/event-emitter-target': 1.1.7
+      '@masx200/event-emitter-target': registry.npmjs.org/@masx200/event-emitter-target/1.1.7
     dev: false
+    name: '@masx200/async-task-current-limiter'
     resolution:
-      integrity: sha1-I8oTjkz2tdvDCERHU5SuMVSpUdw=
-      tarball: '@masx200/async-task-current-limiter/download/@masx200/async-task-current-limiter-1.0.9.tgz'
-  /@masx200/event-emitter-target/1.1.7:
+      integrity: sha512-+JSTzadMW49wbzRIPzJS5BzEypt5Hy8CIbatYwpk1Gp8AbGxvwKoj1XgA//P2bEEodmFZGVCpgb3eXJl9SOVfA==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@masx200/async-task-current-limiter/-/async-task-current-limiter-1.0.9.tgz'
+    version: 1.0.9
+  registry.npmjs.org/@masx200/event-emitter-target/1.1.7:
     dev: false
+    name: '@masx200/event-emitter-target'
     resolution:
-      integrity: sha1-EXV6gFMUiG7LVKWqX6toFbM7CRM=
-      tarball: '@masx200/event-emitter-target/download/@masx200/event-emitter-target-1.1.7.tgz'
-  /@shanyue/promise-utils/2.0.4:
+      integrity: sha512-7MPOvpJxXOaX5QMRFn+oTrVg/vvff2fyOSAzGxHOf/sIZBnSLdaupJJPn2him/hkAzFmiCPK58uMP7f6iRLiIA==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@masx200/event-emitter-target/-/event-emitter-target-1.1.7.tgz'
+    version: 1.1.7
+  registry.npmjs.org/@shanyue/promise-utils/2.0.4:
     dev: false
     engines:
       node: '>=10'
+    name: '@shanyue/promise-utils'
     resolution:
-      integrity: sha1-UAon/c8gcTAKxXHP8bOX2TT/pF4=
-      tarball: '@shanyue/promise-utils/download/@shanyue/promise-utils-2.0.4.tgz'
-  /@types/find/0.2.1:
+      integrity: sha512-dpGmggFZ80nZJJpQ957fxbavLXnkvrcL/miQXtIexlZZqWStGnNgKHQ4cdDUei+ktpKn24YbIXsiy957GtNs6g==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@shanyue/promise-utils/-/promise-utils-2.0.4.tgz'
+    version: 2.0.4
+  registry.npmjs.org/@types/find/0.2.1:
     dev: true
+    name: '@types/find'
     resolution:
-      integrity: sha1-6NDXqVK+LZB2jW+N1/LmYwuyYPg=
-      tarball: '@types/find/download/@types/find-0.2.1.tgz'
-  /@types/fs-extra/9.0.1:
+      integrity: sha512-qUrCBlWoo9ij6ZEMx8G2WEjkdpofFks37/eZSDce7e0BY8lCYS2u7dVAoBy6AKRGX8z/ukllrUAyQ8h+/zlW9w==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@types/find/-/find-0.2.1.tgz'
+    version: 0.2.1
+  registry.npmjs.org/@types/fs-extra/9.0.2:
     dependencies:
-      '@types/node': 14.10.2
+      '@types/node': registry.npmjs.org/@types/node/14.14.6
     dev: true
+    name: '@types/fs-extra'
     resolution:
-      integrity: sha1-kcj8TFH21dvkTCypqwkxC9AMeRg=
-      tarball: '@types/fs-extra/download/@types/fs-extra-9.0.1.tgz'
-  /@types/node/14.10.2:
+      integrity: sha512-jp0RI6xfZpi5JL8v7WQwpBEQTq63RqW2kxwTZt+m27LcJqQdPVU1yGnT1ZI4EtCDynQQJtIGyQahkiCGCS7e+A==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@types/fs-extra/-/fs-extra-9.0.2.tgz'
+    version: 9.0.2
+  registry.npmjs.org/@types/node/14.14.6:
     dev: true
+    name: '@types/node'
     resolution:
-      integrity: sha1-m0eiyOTavU23O1fnULJK9olgBRQ=
-      tarball: '@types/node/download/@types/node-14.10.2.tgz'
-  /at-least-node/1.0.0:
+      integrity: sha512-6QlRuqsQ/Ox/aJEQWBEJG7A9+u7oSYl3mem/K8IzxXG/kAGbV1YPD9Bg9Zw3vyxC/YP+zONKwy8hGkSt1jxFMw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/@types/node/-/node-14.14.6.tgz'
+    version: 14.14.6
+  registry.npmjs.org/at-least-node/1.0.0:
     dev: false
     engines:
       node: '>= 4.0.0'
+    name: at-least-node
     resolution:
-      integrity: sha1-YCzUtG6EStTv/JKoARo8RuAjjcI=
-      tarball: at-least-node/download/at-least-node-1.0.0.tgz
-  /find/0.3.0:
+      integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/at-least-node/-/at-least-node-1.0.0.tgz'
+    version: 1.0.0
+  registry.npmjs.org/find/0.3.0:
     dependencies:
-      traverse-chain: 0.1.0
+      traverse-chain: registry.npmjs.org/traverse-chain/0.1.0
     dev: false
+    name: find
     resolution:
-      integrity: sha1-QILo/I2DIPGjgrXk9SG5vFB3XLg=
-      tarball: find/download/find-0.3.0.tgz
-  /fs-extra/9.0.1:
+      integrity: sha512-iSd+O4OEYV/I36Zl8MdYJO0xD82wH528SaCieTVHhclgiYNe9y+yPKSwK+A7/WsmHL1EZ+pYUJBXWTL5qofksw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/find/-/find-0.3.0.tgz'
+    version: 0.3.0
+  registry.npmjs.org/fs-extra/9.0.1:
     dependencies:
-      at-least-node: 1.0.0
-      graceful-fs: 4.2.4
-      jsonfile: 6.0.1
-      universalify: 1.0.0
+      at-least-node: registry.npmjs.org/at-least-node/1.0.0
+      graceful-fs: registry.npmjs.org/graceful-fs/4.2.4
+      jsonfile: registry.npmjs.org/jsonfile/6.1.0
+      universalify: registry.npmjs.org/universalify/1.0.0
     dev: false
     engines:
       node: '>=10'
+    name: fs-extra
     resolution:
-      integrity: sha1-kQ2gBiQ3ukw5/t2GPxZ1zP78ufw=
-      tarball: fs-extra/download/fs-extra-9.0.1.tgz
-  /graceful-fs/4.2.4:
+      integrity: sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/fs-extra/-/fs-extra-9.0.1.tgz'
+    version: 9.0.1
+  registry.npmjs.org/graceful-fs/4.2.4:
     dev: false
+    name: graceful-fs
     resolution:
-      integrity: sha1-Ila94U02MpWMRl68ltxGfKB6Kfs=
-      tarball: graceful-fs/download/graceful-fs-4.2.4.tgz?cache=0&sync_timestamp=1588086876757&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fgraceful-fs%2Fdownload%2Fgraceful-fs-4.2.4.tgz
-  /jsonfile/6.0.1:
+      integrity: sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.4.tgz'
+    version: 4.2.4
+  registry.npmjs.org/jsonfile/6.1.0:
     dependencies:
-      universalify: 1.0.0
+      universalify: registry.npmjs.org/universalify/2.0.0
     dev: false
+    name: jsonfile
     optionalDependencies:
-      graceful-fs: 4.2.4
+      graceful-fs: registry.npmjs.org/graceful-fs/4.2.4
     resolution:
-      integrity: sha1-mJZsuiFDeMjIS4LghZB7QL9hQXk=
-      tarball: jsonfile/download/jsonfile-6.0.1.tgz
-  /prettier/2.1.2:
+      integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/jsonfile/-/jsonfile-6.1.0.tgz'
+    version: 6.1.0
+  registry.npmjs.org/prettier/2.1.2:
     dev: true
     engines:
       node: '>=10.13.0'
     hasBin: true
+    name: prettier
     resolution:
-      integrity: sha1-MFBwDa4uTItnxMP2Zs24r0BeHOU=
-      tarball: prettier/download/prettier-2.1.2.tgz
-  /traverse-chain/0.1.0:
+      integrity: sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/prettier/-/prettier-2.1.2.tgz'
+    version: 2.1.2
+  registry.npmjs.org/traverse-chain/0.1.0:
     dev: false
+    name: traverse-chain
     resolution:
       integrity: sha1-YdvC1Ttp/2CRoSoWj9fUMxB+QPE=
-      tarball: traverse-chain/download/traverse-chain-0.1.0.tgz
-  /tslib/2.0.1:
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/traverse-chain/-/traverse-chain-0.1.0.tgz'
+    version: 0.1.0
+  registry.npmjs.org/tslib/2.0.3:
     dev: true
+    name: tslib
     resolution:
-      integrity: sha1-QQ6w0RPltjVkkO7HSWA3JbAhtD4=
-      tarball: tslib/download/tslib-2.0.1.tgz?cache=0&sync_timestamp=1596764182430&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-2.0.1.tgz
-  /typescript/4.0.2:
+      integrity: sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/tslib/-/tslib-2.0.3.tgz'
+    version: 2.0.3
+  registry.npmjs.org/typescript/4.0.5:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
+    name: typescript
     resolution:
-      integrity: sha1-fqfIh3fHI8aB4zv3mIvl0AjQWsI=
-      tarball: typescript/download/typescript-4.0.2.tgz
-  /universalify/1.0.0:
+      integrity: sha512-ywmr/VrTVCmNTJ6iV2LwIrfG1P+lv6luD8sUJs+2eI9NLGigaN+nUQc13iHqisq7bra9lnmUSYqbJvegraBOPQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/typescript/-/typescript-4.0.5.tgz'
+    version: 4.0.5
+  registry.npmjs.org/universalify/1.0.0:
     dev: false
     engines:
       node: '>= 10.0.0'
+    name: universalify
     resolution:
-      integrity: sha1-thodoXPoQ1sv48Z9Kbmt+FlL0W0=
-      tarball: universalify/download/universalify-1.0.0.tgz
+      integrity: sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/universalify/-/universalify-1.0.0.tgz'
+    version: 1.0.0
+  registry.npmjs.org/universalify/2.0.0:
+    dev: false
+    engines:
+      node: '>= 10.0.0'
+    name: universalify
+    resolution:
+      integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==
+      registry: 'https://registry.npmjs.com/'
+      tarball: 'https://registry.npmjs.org/universalify/-/universalify-2.0.0.tgz'
+    version: 2.0.0
 specifiers:
   '@masx200/async-task-current-limiter': ^1.0.9
   '@shanyue/promise-utils': ^2.0.4
   '@types/find': ^0.2.1
-  '@types/fs-extra': ^9.0.1
-  '@types/node': ^14.10.2
+  '@types/fs-extra': ^9.0.2
+  '@types/node': ^14.14.6
   find: ^0.3.0
   fs-extra: ^9.0.1
   prettier: ^2.1.2
-  tslib: ^2.0.1
-  typescript: ^4.0.2
+  tslib: ^2.0.3
+  typescript: ^4.0.5
