@@ -1,13 +1,7 @@
-import { fatalerror } from "./uploadfile.js";
-
-function checkmetamsg(stdout: string): boolean {
-    const infoarr = stdout
-        .split("--------------")?.[1]
-        ?.split(/\s+/)
-        ?.filter(Boolean);
-
-    return infoarr?.[0] === "类型" && infoarr?.[1] === "文件";
-}
+import pupkg from "@shanyue/promise-utils";
+import { checkmetamsg } from "./checkmetamsg.js";
+import execmeta from "./execmeta.js";
+import { onFailedAttempt } from "./onFailedAttempt.js";
 
 export async function checkexist(remotefile: string): Promise<boolean> {
     const fileexist = await retry(
@@ -61,29 +55,13 @@ export async function checkexist(remotefile: string): Promise<boolean> {
         },
         {
             times: 15,
-            onFailedAttempt: async (e) => {
-                console.warn(e);
-
-                const stdout =
-                    Reflect.has(e, "stdout") && Reflect.get(e, "stdout");
-
-                if (typeof stdout !== "string") {
-                    throw e;
-                }
-                if (fatalerror.some((m) => stdout.includes(m))) {
-                    throw e;
-                }
-
-                console.warn("运行命令查询错误，4秒后重试");
-                await sleep(4000);
-            },
+            onFailedAttempt: onFailedAttempt,
         }
     );
     return fileexist;
 }
 
-import execmeta from "./execmeta.js";
-import pupkg from "@shanyue/promise-utils";
 const { retry, sleep } = pupkg;
 const notexistmsg =
     "遇到错误, 远端服务器返回错误, 代码: 31066, 消息: 文件或目录不存在";
+export { sleep };

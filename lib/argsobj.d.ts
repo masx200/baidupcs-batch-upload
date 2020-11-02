@@ -1,1 +1,1 @@
-export declare const argsobj: Record<string, string>;
+export declare const argsobj: any;

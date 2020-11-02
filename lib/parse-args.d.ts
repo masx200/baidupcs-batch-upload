@@ -1,2 +1,2 @@
-declare function parseargs(args: string[]): Record<string, string>;
 export { parseargs };
+import parseargs from "@masx200/mini-cli-args-parser";
