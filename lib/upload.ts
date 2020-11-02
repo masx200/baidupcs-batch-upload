@@ -35,26 +35,7 @@ export async function upload(file: string, destination: string): Promise<void> {
         const { stdout, stderr, code } = error;
         console.error(error);
         console.error(JSON.stringify({ stdout, stderr }, null, 4));
-        /*
-Error: spawn BaiduPCS-Go ENOENT
-    at Process.ChildProcess._handle.onexit (internal/child_process.js:268:19)
-    at onErrorNT (internal/child_process.js:468:16)
-    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'spawn BaiduPCS-Go',
-  path: 'BaiduPCS-Go',
-  spawnargs: [ 'upload', '/sdcard/test/test/文件.txt', '/我 的测试/test' ],
-  cmd: 'BaiduPCS-Go upload /sdcard/test/test/文件.txt /我的 测试/test',
-  stdout: '',
-  stderr: ''
-}
-
-*/
-        /*
-Error: Command failed: BaiduPCS-Go.exe upload D:\baidupandownload\微博美图合集-2020-02-15+2020-02-14\图片压缩输出\微博美图合集-2020-02-14\教主Shadow\微博配图\882ab48745b65338f17c993f80d3f15c.webp /我的图片/微博美图合集-2020-02-15+2020-02-14/图片压缩输出/微博美图合集-2020-02-14/教主Shadow/微博配图 panic: runtime error: index out of range goroutine 22 [running]:github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload.(*UploadingDatabase).UpdateUploading(0xc0422e48d0, 0xc042222240, 0xc0420f6ee0) /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload/upload_database.go:101 +0x279github.com/iikira/BaiduPCS-Go/internal/pcscommand.RunUpload.func2.1(0xa60d20, 0xc042580a80, 0xc04205c240) /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/internal/pcscommand/upload.go:355 +0x385github.com/iikira/BaiduPCS-Go/requester/uploader.(*MultiUploader).uploadStatusEvent.func1(0xc04206aa90) /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/requester/uploader/status.go:93 +0x1a1created by github.com/iikira/BaiduPCS-Go/requester/uploader.(*MultiUploader).uploadStatusEvent /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/requester/uploader/status.go:84 +0x4f at ChildProcess.exithandler (child_process.js:303:12) at ChildProcess.emit (events.js:321:20) at maybeClose (internal/child_process.js:1026:16) at Process.ChildProcess._handle.onexit (internal/child_process.js:286:5) { killed: false, code: 2, signal: null, cmd: 'BaiduPCS-Go.exe upload D:\\baidupandownload\\微博美图合集-2020-02-15+2020-02-14\\图片压缩输出\\微博美图合集-2020-02-14\\教主Shadow\\微博配图\\882ab48745b65338f17c993f80d3f15c.webp /我的图片/微博美图合集-2020-02-15+2020-02-14/图片压缩输出/微博美图合集-2020-02-14/教主Shadow/微博配图',
-
-*/
+   
         if (
             typeof code !== "number" ||
             typeof stdout !== "string" ||
@@ -160,3 +141,25 @@ console.log("用时"+durtime+"秒")
         );
     }
 }
+
+
+     /*
+Error: spawn BaiduPCS-Go ENOENT
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:268:19)
+    at onErrorNT (internal/child_process.js:468:16)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawn BaiduPCS-Go',
+  path: 'BaiduPCS-Go',
+  spawnargs: [ 'upload', '/sdcard/test/test/文件.txt', '/我 的测试/test' ],
+  cmd: 'BaiduPCS-Go upload /sdcard/test/test/文件.txt /我的 测试/test',
+  stdout: '',
+  stderr: ''
+}
+
+*/
+        /*
+Error: Command failed: BaiduPCS-Go.exe upload D:\baidupandownload\微博美图合集-2020-02-15+2020-02-14\图片压缩输出\微博美图合集-2020-02-14\教主Shadow\微博配图\882ab48745b65338f17c993f80d3f15c.webp /我的图片/微博美图合集-2020-02-15+2020-02-14/图片压缩输出/微博美图合集-2020-02-14/教主Shadow/微博配图 panic: runtime error: index out of range goroutine 22 [running]:github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload.(*UploadingDatabase).UpdateUploading(0xc0422e48d0, 0xc042222240, 0xc0420f6ee0) /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/internal/pcsfunctions/pcsupload/upload_database.go:101 +0x279github.com/iikira/BaiduPCS-Go/internal/pcscommand.RunUpload.func2.1(0xa60d20, 0xc042580a80, 0xc04205c240) /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/internal/pcscommand/upload.go:355 +0x385github.com/iikira/BaiduPCS-Go/requester/uploader.(*MultiUploader).uploadStatusEvent.func1(0xc04206aa90) /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/requester/uploader/status.go:93 +0x1a1created by github.com/iikira/BaiduPCS-Go/requester/uploader.(*MultiUploader).uploadStatusEvent /Users/syy/go/src/github.com/iikira/BaiduPCS-Go/requester/uploader/status.go:84 +0x4f at ChildProcess.exithandler (child_process.js:303:12) at ChildProcess.emit (events.js:321:20) at maybeClose (internal/child_process.js:1026:16) at Process.ChildProcess._handle.onexit (internal/child_process.js:286:5) { killed: false, code: 2, signal: null, cmd: 'BaiduPCS-Go.exe upload D:\\baidupandownload\\微博美图合集-2020-02-15+2020-02-14\\图片压缩输出\\微博美图合集-2020-02-14\\教主Shadow\\微博配图\\882ab48745b65338f17c993f80d3f15c.webp /我的图片/微博美图合集-2020-02-15+2020-02-14/图片压缩输出/微博美图合集-2020-02-14/教主Shadow/微博配图',
+
+*/
