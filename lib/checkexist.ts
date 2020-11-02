@@ -38,6 +38,8 @@ export async function checkexist(remotefile: string): Promise<boolean> {
                 return false;
             } else if (checkmetamsg(stdout)) {
                 return true;
+            } else if (!checkmetamsg(stdout)) {
+                return false;
             } else {
                 throw Object.assign(
                     new Error(
@@ -50,8 +52,6 @@ export async function checkexist(remotefile: string): Promise<boolean> {
                     { stdout, stderr }
                 );
             }
-
-            //todo
         },
         {
             times: 15,
