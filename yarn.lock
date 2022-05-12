@@ -15,9 +15,9 @@
   integrity sha512-7MPOvpJxXOaX5QMRFn+oTrVg/vvff2fyOSAzGxHOf/sIZBnSLdaupJJPn2him/hkAzFmiCPK58uMP7f6iRLiIA==
 
 "@masx200/mini-cli-args-parser@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/@masx200/mini-cli-args-parser/download/@masx200/mini-cli-args-parser-1.0.2.tgz#bedbdc1dc713f6f9b5a1a35f66b5dd6c48dd85f2"
-  integrity sha1-vtvcHccT9vm1oaNfZrXdbEjdhfI=
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@masx200/mini-cli-args-parser/-/mini-cli-args-parser-1.0.4.tgz#a155356745231886e6810079de7fee76bada30f4"
+  integrity sha512-9/TlfQTz0JP8GRhrP/XP9Db0FndaQrrg4hYF4RMpCoh3mhd9+7ETUUpiXOPMKD23nI38wWZcSOf33wNpRcH2RQ==
 
 "@shanyue/promise-utils@^2.0.4":
   version "2.0.4"
