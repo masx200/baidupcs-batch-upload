@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@masx200/async-task-current-limiter": "^2.0.1",
-        "@masx200/mini-cli-args-parser": "^1.0.2",
+        "@masx200/mini-cli-args-parser": "^1.0.5",
         "@shanyue/promise-utils": "^2.0.4",
         "find": "^0.3.0",
         "fs-extra": "^10.1.0"

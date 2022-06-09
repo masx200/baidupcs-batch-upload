@@ -17,10 +17,10 @@
   dependencies:
     regenerator-runtime "^0.13.9"
 
-"@masx200/mini-cli-args-parser@^1.0.2":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@masx200/mini-cli-args-parser/-/mini-cli-args-parser-1.0.4.tgz#a155356745231886e6810079de7fee76bada30f4"
-  integrity sha512-9/TlfQTz0JP8GRhrP/XP9Db0FndaQrrg4hYF4RMpCoh3mhd9+7ETUUpiXOPMKD23nI38wWZcSOf33wNpRcH2RQ==
+"@masx200/mini-cli-args-parser@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@masx200/mini-cli-args-parser/-/mini-cli-args-parser-1.0.5.tgz#a310153f81ff94485cd4e114df0dba76f8a0b2db"
+  integrity sha512-8sUYY+vRpRTCdr5dNKeQgHDcUSJZVi+uCralb+nnw4aZI0n35cJyI4nnhymztJuDrrO12PYIYYNL7O/hdILQfw==
 
 "@shanyue/promise-utils@^2.0.4":
   version "2.0.4"
