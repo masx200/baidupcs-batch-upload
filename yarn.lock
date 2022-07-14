@@ -2,17 +2,19 @@
 # yarn lockfile v1
 
 
-"@masx200/async-task-current-limiter@^2.0.1":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@masx200/async-task-current-limiter/-/async-task-current-limiter-2.0.2.tgz#404cf84bf3fb8c731fe9c2d040514f0cef6b59bf"
-  integrity sha512-xxwVTvpCZ6FdgDVhSSsIH1SDv53gjw7rWbGlBkM/Pzjz/1Yf8cgFgU9ggj6ioVTaU2Z4zdzeubQKKl+P7TSsXQ==
+"@masx200/async-task-current-limiter@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@masx200/async-task-current-limiter/-/async-task-current-limiter-2.1.0.tgz#7331328c6392cbfc9996eb7f8ad4aee8df5f4a72"
+  integrity sha512-qpGmtSXC041lzjAGcTTSHPXZ+URIca8KFChD/tGS9IE5Jd0L+n90xI3VYixIK1iIz5KeNoFkBHxOiYQJKxqAQg==
   dependencies:
-    "@masx200/event-emitter-target" "1.1.9"
+    "@masx200/event-emitter-target" "2.0.5"
 
-"@masx200/event-emitter-target@1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@masx200/event-emitter-target/-/event-emitter-target-1.1.9.tgz#dd6770f8a79b1687bd0d91fcb27f33794f908e4e"
-  integrity sha512-LzqPTBzpkk59gQXQrLFYD0R9xcbu42DHJBubutIyjY8PYlTy5cq3+qSYl6uLjeHlI+KeM0e9jAFxrUZBFGx4Rw==
+"@masx200/event-emitter-target@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@masx200/event-emitter-target/-/event-emitter-target-2.0.5.tgz#293671ee1cea40a94c014ddc802c5dfeabe42554"
+  integrity sha512-EXh+ZWZdAeLhkiw3jDcLTa/P70jmrsU+SRP5Bt/jw/XINkJj6kx61iAuTIbLfzx3aiSiISGH8qYXHDveamw0PQ==
+  dependencies:
+    regenerator-runtime "^0.13.9"
 
 "@masx200/mini-cli-args-parser@^1.0.5":
   version "1.0.5"
@@ -75,6 +77,11 @@ prettier@^2.1.2:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
   integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+
+regenerator-runtime@^0.13.9:
+  version "0.13.9"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
+  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
 
 traverse-chain@~0.1.0:
   version "0.1.0"
