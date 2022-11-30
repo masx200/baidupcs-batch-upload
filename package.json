@@ -19,7 +19,7 @@
         "@masx200/mini-cli-args-parser": "^1.0.5",
         "@shanyue/promise-utils": "^2.0.4",
         "find": "^0.3.0",
-        "fs-extra": "^10.1.0"
+        "fs-extra": "^11.1.0"
     },
     "license": "MIT",
     "devDependencies": {
